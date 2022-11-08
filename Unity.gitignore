@@ -2,6 +2,7 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 Road Battlers/[Ll]ibrary/
+Road Battlers\[Ll]ibrary\
 Road Battlers/[Tt]emp/
 Road Battlers/[Oo]bj/
 Road Battlers/[Bb]uild/
