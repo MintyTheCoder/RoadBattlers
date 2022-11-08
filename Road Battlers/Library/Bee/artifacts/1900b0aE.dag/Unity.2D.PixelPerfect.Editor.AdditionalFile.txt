@@ -1,5 +1,0 @@
-<<<<<<< Updated upstream
-C:\Users\monty\Documents\GitHub\RoadBattlers\Road Battlers
-=======
-C:\Users\Brodie Liverman\Documents\GitHub\RoadBattlers\Road Battlers
->>>>>>> Stashed changes
