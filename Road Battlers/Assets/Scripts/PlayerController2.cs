@@ -2,45 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     private float horizontalMove;
     public float speed = 0f;
     private float jumpingPower = 8f;
-    float movementX;
-    float movementY;
+    
+
     public Rigidbody2D rb;
     public Transform groundCheck;
     public LayerMask groundLayer;
     // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        movementX = 0;
-        movementY = 0;
-    }
+    
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(movementX * speed * Time.deltaTime, movementY);
-
-
-        if(Input.GetKeyDown(KeyCode.A))
+         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
-            movementX = -1;
+            horizontalMove = Input.GetAxis("Horizontal");
         }
 
-        if(Input.GetKeyDown(KeyCode.D))
+        if(Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            movementX = 1;
+            horizontalMove = Input.GetAxis("Horizontal");
         }
+        
 
-        if(Input.GetKeyDown(KeyCode.W) && IsGrounded())
+        if(Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
-        if(Input.GetKeyDown(KeyCode.W) && rb.velocity.y > 0f)
+        if(Input.GetKeyDown(KeyCode.UpArrow) && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
