@@ -23,18 +23,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(movementX * speed * Time.deltaTime, movementY);
-
-
-        if(Input.GetKeyDown(KeyCode.A))
+         if(Input.GetKeyDown(KeyCode.A))
         {
-            movementX = -1;
+            horizontalMove = Input.GetAxis("Horizontal");
         }
 
         if(Input.GetKeyDown(KeyCode.D))
         {
-            movementX = 1;
+            horizontalMove = Input.GetAxis("Horizontal");
         }
+        
 
         if(Input.GetKeyDown(KeyCode.W) && IsGrounded())
         {
