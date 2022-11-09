@@ -7,13 +7,15 @@ public class PlayerController2 : MonoBehaviour
     private float horizontalMove;
     public float speed = 0f;
     private float jumpingPower = 8f;
-    
-
     public Rigidbody2D rb2;
     public Transform groundCheck;
     public LayerMask groundLayer;
-    // Start is called before the first frame update
     
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb2 = GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
