@@ -9,7 +9,7 @@ public class PlayerController2 : MonoBehaviour
     private float jumpingPower = 8f;
     
 
-    public Rigidbody2D rb;
+    public Rigidbody2D rb2;
     public Transform groundCheck;
     public LayerMask groundLayer;
     // Start is called before the first frame update
@@ -18,30 +18,22 @@ public class PlayerController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         if(Input.GetKeyDown(KeyCode.RightArrow))
+        horizontalMove = Input.GetAxis("Joystick2Horizontal");
+
+        if (Input.GetButtonDown("Joystick2Jump") && IsGrounded())
         {
-            horizontalMove = Input.GetAxis("Horizontal");
+            rb2.velocity = new Vector2(rb2.velocity.x, jumpingPower);
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetButtonDown("Joystick2Jump") && rb2.velocity.y > 0f)
         {
-            horizontalMove = Input.GetAxis("Horizontal");
-        }
-        
-
-        if(Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-        }
-        if(Input.GetKeyDown(KeyCode.UpArrow) && rb.velocity.y > 0f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            rb2.velocity = new Vector2(rb2.velocity.x, rb2.velocity.y * 0.5f);
         }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+        rb2.velocity = new Vector2(horizontalMove * speed, rb2.velocity.y);
     }
 
     private bool IsGrounded()

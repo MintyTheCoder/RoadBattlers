@@ -7,46 +7,38 @@ public class PlayerController : MonoBehaviour
     private float horizontalMove;
     public float speed = 0f;
     private float jumpingPower = 8f;
-    float movementX;
-    float movementY;
-    public Rigidbody2D rb;
+    public Rigidbody2D rb1;
     public Transform groundCheck;
     public LayerMask groundLayer;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        movementX = 0;
-        movementY = 0;
+        rb1 = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-         if(Input.GetKeyDown(KeyCode.A))
-        {
-            horizontalMove = Input.GetAxis("Horizontal");
-        }
-
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            horizontalMove = Input.GetAxis("Horizontal");
-        }
+         
+        horizontalMove = Input.GetAxis("Joystick1Horizontal");
         
 
-        if(Input.GetKeyDown(KeyCode.W) && IsGrounded())
+    
+        
+
+        if(Input.GetButtonDown("Joystick1Jump") && IsGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            rb1.velocity = new Vector2(rb1.velocity.x, jumpingPower);
         }
-        if(Input.GetKeyDown(KeyCode.W) && rb.velocity.y > 0f)
+        if(Input.GetButtonDown("Joystick1Jump") && rb1.velocity.y > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            rb1.velocity = new Vector2(rb1.velocity.x, rb1.velocity.y * 0.5f);
         }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontalMove * speed, rb.velocity.y);
+        rb1.velocity = new Vector2(horizontalMove * speed, rb1.velocity.y);
     }
 
     private bool IsGrounded()
