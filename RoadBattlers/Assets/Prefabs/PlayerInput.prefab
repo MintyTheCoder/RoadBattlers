@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 173999962281365821}
   - component: {fileID: 173999962281365811}
+  - component: {fileID: 173999962281365820}
   m_Layer: 0
   m_Name: PlayerInput
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 173999962281365820}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -75,7 +76,7 @@ MonoBehaviour:
     m_ActionName: Gamepad Controller/Move[/DualSenseGamepadHID/leftStick,/DualSenseGamepadHID1/leftStick]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 173999962281365820}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 1
@@ -91,7 +92,7 @@ MonoBehaviour:
     m_ActionName: Gamepad Controller/Jump[/DualSenseGamepadHID/buttonSouth,/DualSenseGamepadHID1/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 173999962281365820}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: OnAttack
         m_Mode: 1
@@ -110,3 +111,17 @@ MonoBehaviour:
   m_DefaultActionMap: Gamepad Controller
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &173999962281365820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173999962281365823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0663e0cf1c542a2965b4eaa9678c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 3777501073960619990, guid: 13df67e9388a7496397c65f7fc2cfad4, type: 3}
+  spawnPoint: {x: 0, y: 0, z: 0}
