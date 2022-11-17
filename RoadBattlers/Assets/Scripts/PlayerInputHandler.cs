@@ -7,7 +7,7 @@ public class PlayerInputHandler : MonoBehaviour{
 
     public GameObject playerPrefab;
     PlayerMovement playerMovementScript; //on each player
-    public Vector3 spawnPoint;
+    public Vector2 spawnPoint;
 
     private void Awake()
     {

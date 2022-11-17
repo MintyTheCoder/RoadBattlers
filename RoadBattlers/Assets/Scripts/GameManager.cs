@@ -38,8 +38,8 @@ public class GameManager : MonoBehaviour
         }
 
         //look for player spawn points in the world and add them to the array
-       // spawnPoints[0] = GameObject.FindGameObjectWithTag("SpawnPointOne");
-        //spawnPoints[1] = GameObject.FindGameObjectWithTag("SpawnPointTwo");
+       spawnPoints[0] = GameObject.FindGameObjectWithTag("SpawnPointOne");
+       spawnPoints[1] = GameObject.FindGameObjectWithTag("SpawnPointTwo");
 
     }
 
