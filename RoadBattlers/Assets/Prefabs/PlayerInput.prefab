@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 3777501073960619990, guid: 13df67e9388a7496397c65f7fc2cfad4, type: 3}
-  spawnPoint: {x: 0, y: 0, z: 0}
+  playerPrefab2: {fileID: 3777501073960619990, guid: 4aca7b31473be984ba3d6e77fc3e1f61, type: 3}

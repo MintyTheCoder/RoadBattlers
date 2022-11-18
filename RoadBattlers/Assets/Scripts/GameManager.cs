@@ -37,9 +37,15 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        joinAction.Enable();
+        joinAction.performed += context => JoinAction(context);
+
+        leaveAction.Enable();
+        leaveAction.performed += context => LeaveAction(context);
+
         //look for player spawn points in the world and add them to the array
-       //spawnPoints[0] = GameObject.FindGameObjectWithTag("SpawnPointOne");
-       //spawnPoints[1] = GameObject.FindGameObjectWithTag("SpawnPointTwo");
+        //spawnPoints[0] = GameObject.FindGameObjectWithTag("SpawnPointOne");
+        //spawnPoints[1] = GameObject.FindGameObjectWithTag("SpawnPointTwo");
 
     }
 
@@ -50,7 +56,8 @@ public class GameManager : MonoBehaviour
         spawnPoints[1] = GameObject.FindGameObjectWithTag("SpawnPointTwo");
 
         //add the first player to the world, no split screen, default input controls
-        PlayerInputManager.instance.JoinPlayer(0, -1, null);
+        //PlayerInputManager.instance.JoinPlayer(0, -1, null);
+        //PlayerInputManager.instance.JoinPlayer(1, -1, null);
     }
 
      //Input Manager Default method names
@@ -68,6 +75,16 @@ public class GameManager : MonoBehaviour
     }
 
     void OnPlayerLeft(PlayerInput playerInput)
+    {
+
+    }
+
+    void JoinAction (InputAction.CallbackContext context)
+    {
+        PlayerInputManager.instance.JoinPlayerFromActionIfNotAlreadyJoined(context);
+    }
+
+    void LeaveAction(InputAction.CallbackContext context)
     {
 
     }

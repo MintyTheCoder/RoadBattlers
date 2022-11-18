@@ -6,14 +6,16 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour{
 
     public GameObject playerPrefab;
+
     PlayerMovement playerMovementScript; //on each player
-    public Vector2 spawnPoint;
+    private Vector2 spawnPoint;
+    //int spawnNumber = 0;
 
     private void Awake()
     {
         //get a spawn point from the game manager object
         spawnPoint = GameManager.gameManagerInstance.spawnPoints[0].transform.position;
-
+        //playerMovementScript = GameObject.Instantiate(playerPrefab, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
         if (playerPrefab != null)
         {
             //make a player prefab in the game
@@ -21,7 +23,20 @@ public class PlayerInputHandler : MonoBehaviour{
             playerMovementScript = GameObject.Instantiate(playerPrefab, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
 
             transform.parent = playerMovementScript.transform;
-        }
+            transform.position = playerMovementScript.transform.position;
+        } 
+
+        /*spawnPoint = GameManager.gameManagerInstance.spawnPoints[1].transform.position;
+
+        if (playerPrefab != null)
+        {
+            //make a player prefab in the game
+            //and get access to the script on the player prefab
+            playerMovementScript = GameObject.Instantiate(playerPrefab2, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
+
+            transform.parent = playerMovementScript.transform;
+            transform.position = playerMovementScript.transform.position;
+        }*/
     }
 
     //get the event from the gamepad
