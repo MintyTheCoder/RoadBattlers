@@ -381,8 +381,8 @@
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/GamePadControl.cs"
 "Assets/Scripts/PlayerInputHandler.cs"
-"Assets/Scripts/PlayerInputHandler1.cs"
 "Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/ProjectileMove.cs"
 -langversion:9.0
 
 /deterministic

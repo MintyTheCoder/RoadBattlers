@@ -5,38 +5,44 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour{
 
-    public GameObject playerPrefab;
+    public GameObject player1Skin;
+    public GameObject player2Skin;
 
     PlayerMovement playerMovementScript; //on each player
     private Vector2 spawnPoint;
-    //int spawnNumber = 0;
 
+    public static PlayerInputHandler handlerInstance;
     private void Awake()
     {
         //get a spawn point from the game manager object
-        spawnPoint = GameManager.gameManagerInstance.spawnPoints[0].transform.position;
+        
         //playerMovementScript = GameObject.Instantiate(playerPrefab, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
-        if (playerPrefab != null)
+        if (handlerInstance == null)
         {
+            spawnPoint = GameManager.gameManagerInstance.spawnPoints[0].transform.position;
             //make a player prefab in the game
             //and get access to the script on the player prefab
-            playerMovementScript = GameObject.Instantiate(playerPrefab, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
+            playerMovementScript = GameObject.Instantiate(player1Skin, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
 
             transform.parent = playerMovementScript.transform;
             transform.position = playerMovementScript.transform.position;
-        } 
+            Debug.Log("Loop1");
+            handlerInstance = this;
+         
+        }
 
-        /*spawnPoint = GameManager.gameManagerInstance.spawnPoints[1].transform.position;
-
-        if (playerPrefab != null)
+        else if (handlerInstance != null)
         {
+            spawnPoint = GameManager.gameManagerInstance.spawnPoints[1].transform.position;
             //make a player prefab in the game
             //and get access to the script on the player prefab
-            playerMovementScript = GameObject.Instantiate(playerPrefab2, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
+            playerMovementScript = GameObject.Instantiate(player2Skin, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
 
             transform.parent = playerMovementScript.transform;
             transform.position = playerMovementScript.transform.position;
-        }*/
+            Debug.Log("Loop 2");
+        }
+     
     }
 
     //get the event from the gamepad

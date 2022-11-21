@@ -8,13 +8,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerSpeed = 5.0f;
     [SerializeField] private float jumpPower = 5.0f;
 
+
     private Rigidbody2D playerRigidbody;
 
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
     private bool isTouchingGround;
-
+    public GameObject projectilePrefab;
 
     Vector2 horizontalInput;
 
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
    public void OnAttack()
    {
         Debug.Log("Attack!");
+        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
    }
 
 
