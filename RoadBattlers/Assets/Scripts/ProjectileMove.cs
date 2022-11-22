@@ -20,9 +20,9 @@ public class ProjectileMove : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Border"))
+        if (other.CompareTag("Border"))
         {
             Destroy(gameObject);
         }
