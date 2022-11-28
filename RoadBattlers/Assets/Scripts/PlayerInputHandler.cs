@@ -28,7 +28,6 @@ public class PlayerInputHandler : MonoBehaviour{
             transform.position = playerMovementScript.transform.position;
             Debug.Log("Loop1");
             handlerInstance = this;
-         
         }
 
         else if (handlerInstance != null)

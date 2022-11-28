@@ -214,7 +214,7 @@ MonoBehaviour:
   m_NotificationBehavior: 0
   m_MaxPlayerCount: -1
   m_AllowJoining: 1
-  m_JoinBehavior: 2
+  m_JoinBehavior: 0
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -278,24 +278,16 @@ MonoBehaviour:
     m_Name: Join
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 3011dec8-0f22-4802-a8bd-a9b00c0565f1
+    m_Id: 929f05e2-580d-451b-90b3-48ad4198aee1
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 91b6f100-6838-46d3-8c3a-229516df149e
-      m_Path: <Gamepad>/buttonNorth
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Join
-      m_Flags: 0
+    m_SingletonActionBindings: []
     m_Flags: 0
   leaveAction:
     m_Name: Leave
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: ac9489b4-401c-4723-b6ed-dfd58dc7d580
+    m_Id: a6b8055e-8a60-4413-a03c-c74516206191
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []

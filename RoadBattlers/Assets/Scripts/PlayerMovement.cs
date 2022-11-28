@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 horizontalInput;
 
-
     private void Start()
     {
         
