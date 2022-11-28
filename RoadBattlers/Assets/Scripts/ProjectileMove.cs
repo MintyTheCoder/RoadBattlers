@@ -19,4 +19,6 @@ public class ProjectileMove : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
     }
+
+    //if (gameObjec)
 }

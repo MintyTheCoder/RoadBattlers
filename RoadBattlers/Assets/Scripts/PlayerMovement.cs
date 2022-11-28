@@ -72,6 +72,5 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody.velocity = new Vector2(horizontalInput.x * playerSpeed, playerRigidbody.velocity.y);
     }
     // private void Jump() => _playerRigidbody.velocity = new Vector2(0, jumpPower);
-
-    
+   
 }
