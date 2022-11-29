@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerSpeed = 5.0f;
     [SerializeField] private float jumpPower = 5.0f;
 
-
     private Rigidbody2D playerRigidbody;
 
     public Transform groundCheck;
@@ -16,8 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundLayer;
     private bool isTouchingGround;
     public GameObject projectilePrefab;
-
-    Vector2 horizontalInput;
+    public Vector2 horizontalInput;
 
     private void Start()
     {
@@ -30,11 +28,15 @@ public class PlayerMovement : MonoBehaviour
         }
         */
     }
-
+    
     public void OnMove(InputAction.CallbackContext inputValue)
     {
         horizontalInput = inputValue.ReadValue<Vector2>();
         playerRigidbody.velocity = new Vector2(horizontalInput.x * playerSpeed, playerRigidbody.velocity.y);
+        if(horizontalInput.x > 0)
+        {
+            SpriteRenderer.Flip.x == true;
+        }
     }
 
     public void OnJump()
