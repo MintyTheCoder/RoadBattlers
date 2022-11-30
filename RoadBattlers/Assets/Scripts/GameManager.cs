@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     //events
     public event System.Action<PlayerInput> PlayerJoinedGame;
-    public event System.Action<PlayerInput> PlayerLeftGame;
+    //public event System.Action<PlayerInput> PlayerLeftGame;
 
     private void Awake()
     {
@@ -38,8 +38,8 @@ public class GameManager : MonoBehaviour
         joinAction.Enable();
         joinAction.performed += context => JoinAction(context);
 
-        leaveAction.Enable();
-        leaveAction.performed += context => LeaveAction(context);
+        /*leaveAction.Enable();
+        leaveAction.performed += context => LeaveAction(context);*/
 
         //look for player spawn points in the world and add them to the array
         //spawnPoints[0] = GameObject.FindGameObjectWithTag("SpawnPointOne");
@@ -72,18 +72,18 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void OnPlayerLeft(PlayerInput playerInput)
+    /*void OnPlayerLeft(PlayerInput playerInput)
     {
 
-    }
+    }*/
 
     void JoinAction (InputAction.CallbackContext context)
     {
         PlayerInputManager.instance.JoinPlayerFromActionIfNotAlreadyJoined(context);
     }
 
-    void LeaveAction(InputAction.CallbackContext context)
+    /*void LeaveAction(InputAction.CallbackContext context)
     {
 
-    }
+    }*/
 }
