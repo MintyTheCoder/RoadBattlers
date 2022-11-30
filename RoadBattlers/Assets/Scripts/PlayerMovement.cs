@@ -9,17 +9,22 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpPower = 5.0f;
 
     private Rigidbody2D playerRigidbody;
+    private SpriteRenderer renderer;
 
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
     private bool isTouchingGround;
-    public GameObject projectilePrefab;
+
+    public GameObject projectileLeftPrefab;
+    public GameObject projectileRightPrefab;
+
     public Vector2 horizontalInput;
+    public bool isFacingRight;
 
     private void Start()
     {
-        
+        renderer = GetComponent<SpriteRenderer>();
         playerRigidbody = GetComponent<Rigidbody2D>();
         /*
         if (_playerRigidbody == null)
@@ -35,7 +40,13 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody.velocity = new Vector2(horizontalInput.x * playerSpeed, playerRigidbody.velocity.y);
         if(horizontalInput.x > 0)
         {
-            SpriteRenderer.Flip.x == true;
+            isFacingRight = true;
+            renderer.flipX = true;
+        }
+        else if(horizontalInput.x < 0)
+        {
+            isFacingRight = false;
+            renderer.flipX = false;
         }
     }
 
@@ -57,8 +68,20 @@ public class PlayerMovement : MonoBehaviour
    public void OnAttack()
    {
         Debug.Log("Attack!");
-        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-   }
+        if (isFacingRight)
+        {
+            Instantiate(projectileRightPrefab, transform.position, Quaternion.identity);
+        }
+
+        else if (!isFacingRight)
+        {
+            Instantiate(projectileLeftPrefab, transform.position, Quaternion.identity);
+        }
+
+        
+
+
+    }
 
 
     private void Update()

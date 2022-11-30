@@ -58,7 +58,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3777501073960619990}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.07, y: 1.33, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -185,4 +185,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 72
-  projectilePrefab: {fileID: 6271352049601938780, guid: 6c5533c0c9665e046a0d43787d8efcae, type: 3}
+  projectileLeftPrefab: {fileID: 845485211546344522, guid: 64a0bf5c1ef5cbf4abc959f54a2c1db7, type: 3}
+  projectileRightPrefab: {fileID: 5022128463713865049, guid: 2fb9f34e63ed9ff41968e5f986857895, type: 3}
+  horizontalInput: {x: 0, y: 0}
+  isFacingRight: 0
