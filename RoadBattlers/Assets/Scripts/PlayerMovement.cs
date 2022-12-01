@@ -68,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
    public void OnAttack()
    {
         Debug.Log("Attack!");
+
         if (isFacingRight)
         {
             Instantiate(projectileRightPrefab, transform.position, Quaternion.identity);
@@ -77,10 +78,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Instantiate(projectileLeftPrefab, transform.position, Quaternion.identity);
         }
-
-        
-
-
     }
 
 
