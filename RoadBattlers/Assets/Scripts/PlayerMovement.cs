@@ -41,12 +41,12 @@ public class PlayerMovement : MonoBehaviour
         if(horizontalInput.x > 0)
         {
             isFacingRight = true;
-            renderer.flipX = true;
+            renderer.flipX = false;
         }
         else if(horizontalInput.x < 0)
         {
             isFacingRight = false;
-            renderer.flipX = false;
+            renderer.flipX = true;
         }
     }
 
