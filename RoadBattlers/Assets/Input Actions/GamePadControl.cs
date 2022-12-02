@@ -51,7 +51,7 @@ public partial class @GamePadControl : IInputActionCollection2, IDisposable
                     ""id"": ""e09fa913-f17b-47f6-90c7-79af0a9b4eb1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],

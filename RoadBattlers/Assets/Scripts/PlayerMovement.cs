@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private SpriteRenderer renderer;
 
+    public Animator animator;
+    //private Vector2 moveDirection;
+
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
@@ -37,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnMove(InputAction.CallbackContext inputValue)
     {
         horizontalInput = inputValue.ReadValue<Vector2>();
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput.x));
         playerRigidbody.velocity = new Vector2(horizontalInput.x * playerSpeed, playerRigidbody.velocity.y);
         if(horizontalInput.x > 0)
         {

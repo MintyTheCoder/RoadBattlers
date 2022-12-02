@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInputHandler : MonoBehaviour{
+public class PlayerInputHandler : MonoBehaviour
+{
 
     public GameObject player1Skin;
     public GameObject player2Skin;
@@ -16,9 +17,7 @@ public class PlayerInputHandler : MonoBehaviour{
     public static PlayerInputHandler handlerInstance;
     private void Awake()
     {
-        controls = new GamePadControl();
-
-        controls.GamepadController.Attack.started += context => OnAttack();
+        //controls = new GamePadControl();
         //get a spawn point from the game manager object
 
         //playerMovementScript = GameObject.Instantiate(playerPrefab, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
@@ -47,8 +46,8 @@ public class PlayerInputHandler : MonoBehaviour{
             Debug.Log("Loop 2");
         }
 
-        
-     
+
+
     }
 
     //get the event from the gamepad
@@ -65,8 +64,9 @@ public class PlayerInputHandler : MonoBehaviour{
         playerMovementScript.OnJump();
     }
 
+
     //get the event from the gamepad
-    private void OnAttack()
+    public void OnAttack()
     {
         //send the command to the player movement script
         playerMovementScript.OnAttack();

@@ -123,5 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0663e0cf1c542a2965b4eaa9678c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Skin: {fileID: 3777501073960619990, guid: 13df67e9388a7496397c65f7fc2cfad4, type: 3}
+  player1Skin: {fileID: 5790834030620477563, guid: 5d074a59c68f5ad46b55b64582537e13, type: 3}
   player2Skin: {fileID: 3777501073960619990, guid: 4aca7b31473be984ba3d6e77fc3e1f61, type: 3}
