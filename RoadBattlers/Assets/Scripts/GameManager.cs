@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class GameManager : MonoBehaviour
 {
     public GameObject[] spawnPoints = new GameObject[2];

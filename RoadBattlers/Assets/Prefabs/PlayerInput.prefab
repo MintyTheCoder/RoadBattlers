@@ -123,12 +123,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0663e0cf1c542a2965b4eaa9678c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1Skin: {fileID: 2915422701534184149, guid: 1cd9f7dc384e1c34d8da03cfd7358563, type: 3}
+  player2Skin: {fileID: 3777501073960619990, guid: 4aca7b31473be984ba3d6e77fc3e1f61, type: 3}
   characters:
-  - {fileID: 2915422701534184149, guid: 1cd9f7dc384e1c34d8da03cfd7358563, type: 3}
-  - {fileID: 3777501073960619990, guid: 13df67e9388a7496397c65f7fc2cfad4, type: 3}
-  - {fileID: 3777501073960619990, guid: 4aca7b31473be984ba3d6e77fc3e1f61, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  player1array: 1
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player1array: 0
   player2array: 0

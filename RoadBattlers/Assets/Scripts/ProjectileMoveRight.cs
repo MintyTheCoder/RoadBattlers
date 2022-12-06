@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ProjectileMoveRight : MonoBehaviour
 {
     public Rigidbody2D rb;

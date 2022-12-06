@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 5.0f;
@@ -59,7 +60,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if ( IsGrounded())
         {
+            animator.SetBool("isJumping", true);
+            Debug.Log("Got past");
             playerRigidbody.velocity = new Vector2(0, jumpPower);
+        }
+        else if(!IsGrounded())
+        {
+            Debug.Log("not grounded");
+            animator.SetBool("isJumping", false);
         }
     }
 
@@ -74,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
    {
         Debug.Log("Attack!");
 
+        
         if (isFacingRight)
         {
             Instantiate(projectileRightPrefab, transform.position, Quaternion.identity);

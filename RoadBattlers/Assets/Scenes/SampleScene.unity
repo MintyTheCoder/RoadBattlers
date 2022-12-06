@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 0
-  m_MaxPlayerCount: 2
+  m_MaxPlayerCount: -1
   m_AllowJoining: 1
   m_JoinBehavior: 0
   m_PlayerJoinedEvent:
@@ -234,7 +234,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_PlayerPrefab: {fileID: 173999962281365823, guid: b9781f7b52f774c79a4e84bee9892165, type: 3}
-  m_SplitScreen: 1
+  m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 1
   m_FixedNumberOfSplitScreens: -1
   m_SplitScreenRect:
@@ -271,14 +271,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoints:
-  - {fileID: 1871203490}
-  - {fileID: 370009645}
+  - {fileID: 0}
+  - {fileID: 0}
   playerList: []
   joinAction:
     m_Name: Join
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 929f05e2-580d-451b-90b3-48ad4198aee1
+    m_Id: daba5992-a485-4bc2-a8c5-4c867bd4ab3f
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -287,7 +287,7 @@ MonoBehaviour:
     m_Name: Leave
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: a6b8055e-8a60-4413-a03c-c74516206191
+    m_Id: 10566ae7-2158-491f-bbf6-4c56f3dbd7d8
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 465196251}
   - component: {fileID: 465196250}
   - component: {fileID: 465196249}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
