@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
         spawnPoints[1] = GameObject.FindGameObjectWithTag("SpawnPointTwo");
 
         //add the first player to the world, no split screen, default input controls
+
         //PlayerInputManager.instance.JoinPlayer(0, -1, null);
         //PlayerInputManager.instance.JoinPlayer(1, -1, null);
     }

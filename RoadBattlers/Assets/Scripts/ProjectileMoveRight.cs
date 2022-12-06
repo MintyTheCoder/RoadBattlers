@@ -31,6 +31,5 @@ public class ProjectileMoveRight : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 }

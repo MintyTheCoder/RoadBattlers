@@ -30,12 +30,6 @@ public class PlayerMovement : MonoBehaviour
     {
         renderer = GetComponent<SpriteRenderer>();
         playerRigidbody = GetComponent<Rigidbody2D>();
-        /*
-        if (_playerRigidbody == null)
-        {
-            Debug.LogError("Player is missing a Rigidbody2D component");
-        }
-        */
     }
     
     public void OnMove(InputAction.CallbackContext inputValue)

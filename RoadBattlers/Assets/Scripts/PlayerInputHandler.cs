@@ -6,9 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
 
-    private GameObject player1Skin;
-    private GameObject player2Skin;
-
+    public GameObject player1Skin;
+    public GameObject player2Skin;
 
     public GameObject[] characters = new GameObject[6];
 
