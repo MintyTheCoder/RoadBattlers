@@ -6,10 +6,15 @@ using UnityEngine.InputSystem;
 public class PlayerInputHandler : MonoBehaviour
 {
 
-    public GameObject player1Skin;
-    public GameObject player2Skin;
+    private GameObject player1Skin;
+    private GameObject player2Skin;
 
-    private GamePadControl controls;
+
+    public GameObject[] characters = new GameObject[6];
+
+    public int player1array;
+
+    public int player2array;
 
     PlayerMovement playerMovementScript; //on each player
     private Vector2 spawnPoint;
@@ -17,10 +22,8 @@ public class PlayerInputHandler : MonoBehaviour
     public static PlayerInputHandler handlerInstance;
     private void Awake()
     {
-        //controls = new GamePadControl();
         //get a spawn point from the game manager object
 
-        //playerMovementScript = GameObject.Instantiate(playerPrefab, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
         if (handlerInstance == null)
         {
             spawnPoint = GameManager.gameManagerInstance.spawnPoints[0].transform.position;
@@ -46,9 +49,7 @@ public class PlayerInputHandler : MonoBehaviour
             Debug.Log("Loop 2");
         }
 
-
-
-    }
+    } 
 
     //get the event from the gamepad
     public void OnMove(InputAction.CallbackContext context)

@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer renderer;
 
     public Animator animator;
+
     //private Vector2 moveDirection;
 
     public Transform groundCheck;

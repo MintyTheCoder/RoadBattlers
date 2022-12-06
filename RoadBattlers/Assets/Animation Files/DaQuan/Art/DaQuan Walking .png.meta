@@ -101,18 +101,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -121,7 +109,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1024
+        y: 512
         width: 512
         height: 512
       alignment: 0
@@ -131,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4557ee2eeab6ce409d6689539f8b7df
-      internalID: 858620865
+      spriteID: b145f3823ba3a9d46a555726437cfe3c
+      internalID: 2082941478
       vertices: []
       indices: 
       edges: []
@@ -142,7 +130,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 1024
+        y: 512
         width: 512
         height: 512
       alignment: 0
@@ -152,56 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05141f83eed37ae4483c78d0b656c14f
-      internalID: -480835439
+      spriteID: 3ac7c9a960332dd4fad2bb8548089b26
+      internalID: 1804827134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: DaQuan Walking _2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 338aff0125e0c764184b251c8953620a
-      internalID: 1437929240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DaQuan Walking _3
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a1e3a6e005b47f438e881b9af549901
-      internalID: 372670059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DaQuan Walking _4
       rect:
         serializedVersion: 2
         x: 0
@@ -215,8 +161,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f2cc6fbdb9d39b4ba44072dac9a12be
-      internalID: -615672086
+      spriteID: e7422de711747b744a391af9255fc406
+      internalID: -1069018447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DaQuan Walking _3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8362719caa9371944b6e8a6d04c9717c
+      internalID: 1207990822
       vertices: []
       indices: 
       edges: []
@@ -232,11 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DaQuan Walking _4: -615672086
-      DaQuan Walking _1: -480835439
-      DaQuan Walking _2: 1437929240
-      DaQuan Walking _3: 372670059
-      DaQuan Walking _0: 858620865
+      DaQuan Walking _1: 1804827134
+      DaQuan Walking _2: -1069018447
+      DaQuan Walking _3: 1207990822
+      DaQuan Walking _0: 2082941478
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
