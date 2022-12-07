@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject projectileLeftPrefab;
     public GameObject projectileRightPrefab;
 
+    public Vector2 verticalInput;
     public Vector2 horizontalInput;
     public bool isFacingRight;
 
@@ -58,16 +59,21 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump()
     {
-        if ( IsGrounded())
+        //controls if player jumps or not
+        if (IsGrounded())
         {
-            animator.SetBool("isJumping", true);
-            Debug.Log("Got past");
+            
             playerRigidbody.velocity = new Vector2(0, jumpPower);
         }
         else if(!IsGrounded())
         {
-            Debug.Log("not grounded");
-            animator.SetBool("isJumping", false);
+            animator.SetBool("Jump", true);
+            
+        }
+        else
+        {
+            //test
+            animator.SetBool("jump", false);
         }
     }
 
