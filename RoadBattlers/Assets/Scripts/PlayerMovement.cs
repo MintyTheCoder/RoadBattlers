@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
+
+
     [SerializeField] private float playerSpeed = 5.0f;
     [SerializeField] private float jumpPower = 5.0f;
 
@@ -27,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 verticalInput;
     public Vector2 horizontalInput;
     public bool isFacingRight;
+    public bool canShoot = true;
+
+
 
     private void Start()
     {
@@ -62,18 +68,12 @@ public class PlayerMovement : MonoBehaviour
         //controls if player jumps or not
         if (IsGrounded())
         {
-            
             playerRigidbody.velocity = new Vector2(0, jumpPower);
-        }
-        else if(!IsGrounded())
-        {
             animator.SetBool("Jump", true);
-            
         }
         else
         {
-            //test
-            animator.SetBool("jump", false);
+            animator.SetBool("Jump", false);
         }
     }
 
@@ -86,26 +86,39 @@ public class PlayerMovement : MonoBehaviour
 
    public void OnAttack()
    {
-        Debug.Log("Attack!");
-
         
-        if (isFacingRight)
+
+        if (isFacingRight && canShoot == true)
         {
             Instantiate(projectileRightPrefab, transform.position, Quaternion.identity);
         }
 
-        else if (!isFacingRight)
+        else if (!isFacingRight && canShoot == true)
         {
             Instantiate(projectileLeftPrefab, transform.position, Quaternion.identity);
         }
+
+        
+
+        canShoot = false;
+        StartCoroutine(DelayPress());
     }
+
+    public IEnumerator DelayPress()
+    {
+        //canShoot should be true 
+        yield return new WaitForSeconds(2);
+        canShoot = true;
+    }
+
 
 
     private void Update()
     {
-       // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
+        
+        // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
 
-       // MovePlayer();
+        // MovePlayer();
 
     }
     private void MovePlayer()
