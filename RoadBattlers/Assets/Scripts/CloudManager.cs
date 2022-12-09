@@ -15,7 +15,7 @@ public class CloudManager : MonoBehaviour
     public IEnumerator CloudSpawn()
     {
         AddClouds();        
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSeconds(2.5f);
         StartCoroutine("CloudSpawn");
     }
 
