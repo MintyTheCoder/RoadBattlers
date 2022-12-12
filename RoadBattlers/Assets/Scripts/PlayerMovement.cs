@@ -92,6 +92,5 @@ public class PlayerMovement : MonoBehaviour
         //var horizontalInput = Input.GetAxisRaw("Horizontal");
         playerRigidbody.velocity = new Vector2(horizontalInput.x * playerSpeed, playerRigidbody.velocity.y);
     }
-    // private void Jump() => _playerRigidbody.velocity = new Vector2(0, jumpPower);
-   
+    // private void Jump() => _playerRigidbody.velocity = new Vector2(0, jumpPower);  
 }

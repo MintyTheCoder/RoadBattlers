@@ -64,7 +64,6 @@ public class PlayerInputHandler : MonoBehaviour
         playerMovementScript.OnJump();
     }
 
-
     //get the event from the gamepad
     public void OnAttack()
     {

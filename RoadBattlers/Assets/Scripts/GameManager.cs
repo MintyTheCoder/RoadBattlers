@@ -70,7 +70,6 @@ public class GameManager : MonoBehaviour
         {
             PlayerJoinedGame(playerInput);
         }
-
     }
 
     /*void OnPlayerLeft(PlayerInput playerInput)
