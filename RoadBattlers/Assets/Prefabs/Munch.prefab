@@ -160,10 +160,12 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  projectileLeftPrefab: {fileID: 845485211546344522, guid: 64a0bf5c1ef5cbf4abc959f54a2c1db7, type: 3}
-  projectileRightPrefab: {fileID: 5022128463713865049, guid: 2fb9f34e63ed9ff41968e5f986857895, type: 3}
+  projectileLeftPrefab: {fileID: 845485211546344522, guid: eeffe41ca84be2e40b5ae2660fb2974f, type: 3}
+  projectileRightPrefab: {fileID: 5022128463713865049, guid: f5a7d964eff26e44c9bafc124a9372c7, type: 3}
+  verticalInput: {x: 0, y: 0}
   horizontalInput: {x: 0, y: 0}
   isFacingRight: 0
+  canShoot: 0
 --- !u!61 &3845008923113287631
 BoxCollider2D:
   m_ObjectHideFlags: 0

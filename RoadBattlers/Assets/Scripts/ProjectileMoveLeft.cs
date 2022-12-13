@@ -11,16 +11,24 @@ public class ProjectileMoveLeft : MonoBehaviour
     private float rightBound = 9.5f;
     private float leftBound = -9.5f;
 
+    private bool shot;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         transform.Translate(Vector2.left * speed * Time.deltaTime);
+      
+        
+        
+
 
 
         if (transform.position.x > rightBound)
@@ -32,6 +40,9 @@ public class ProjectileMoveLeft : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
+
 
     }
 }
