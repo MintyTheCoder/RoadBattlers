@@ -11,12 +11,12 @@ public class PlayerInputHandler : MonoBehaviour
 
     public GameObject[] characters = new GameObject[6];
 
-    public int player1array;
-
-    public int player2array;
-
     PlayerMovement playerMovementScript; //on each player
     private Vector2 spawnPoint;
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip spawnNoise;
+    //SerializeField] AudioClip damageNoise;
 
     public static PlayerInputHandler handlerInstance;
     private void Awake()
@@ -30,10 +30,13 @@ public class PlayerInputHandler : MonoBehaviour
             //and get access to the script on the player prefab
             playerMovementScript = GameObject.Instantiate(player1Skin, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
 
+            audioSource.PlayOneShot(spawnNoise);
+
             transform.parent = playerMovementScript.transform;
             transform.position = playerMovementScript.transform.position;
             Debug.Log("Loop1");
             handlerInstance = this;
+            
         }
 
         else if (handlerInstance != null)
@@ -42,6 +45,8 @@ public class PlayerInputHandler : MonoBehaviour
             //make a player prefab in the game
             //and get access to the script on the player prefab
             playerMovementScript = GameObject.Instantiate(player2Skin, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
+
+            audioSource.PlayOneShot(spawnNoise);
 
             transform.parent = playerMovementScript.transform;
             transform.position = playerMovementScript.transform.position;

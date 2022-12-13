@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] InputAction joinAction;
     [SerializeField] InputAction leaveAction;
 
+ 
+
     // Instances of the Game Manager
     public static GameManager gameManagerInstance = null;
 

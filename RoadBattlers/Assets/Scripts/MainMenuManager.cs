@@ -26,7 +26,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void GameQuit()
     {
-        Application.Quit();
+        StartCoroutine(Quit());
     }
 
     public IEnumerator ChangeToScene(int changeSceneTo)
@@ -38,5 +38,16 @@ public class MainMenuManager : MonoBehaviour
 
         //load the next scene
         SceneManager.LoadScene(changeSceneTo);
+    }
+
+    public IEnumerator Quit()
+    {
+        //add for sound effect
+        audioSource.PlayOneShot(buttonClick);
+        //wait a few seconds before switching to the next scene
+        yield return new WaitForSeconds(1);
+
+        //load the next scene
+        Application.Quit();
     }
 }
