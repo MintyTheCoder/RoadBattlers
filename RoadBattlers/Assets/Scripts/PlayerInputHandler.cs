@@ -12,10 +12,8 @@ public class PlayerInputHandler : MonoBehaviour
     public GameObject[] characters = new GameObject[6];
 
     PlayerMovement playerMovementScript; //on each player
-    ButtonManager buttonManager;
     private Vector2 spawnPoint;
-    [SerializeField] GameObject pauseMenuUI;
-    GameObject ButtonManager;
+    public  GameObject pauseMenuUI;
 
     private bool isPaused = false;
     [SerializeField] AudioSource audioSource;
@@ -26,7 +24,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Start()
     {
-        pauseMenuUI = GameObject.FindGameObjectWithTag("PauseMenu");
+        //pauseMenuUI = GameObject.FindGameObjectWithTag("PauseMenu");
     }
     private void Awake()
     {

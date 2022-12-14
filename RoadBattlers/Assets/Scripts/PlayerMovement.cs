@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 horizontalInput;
     public bool isFacingRight;
 
+    public int health = 100;
     private void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
@@ -94,6 +95,10 @@ public class PlayerMovement : MonoBehaviour
         }
        // MovePlayer();
 
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     private void MovePlayer()
     {

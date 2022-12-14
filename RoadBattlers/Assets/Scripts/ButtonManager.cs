@@ -13,6 +13,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] AudioClip buttonClick;
 
     public GameObject pauseMenuUI;
+
     private void Start()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;

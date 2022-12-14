@@ -149,7 +149,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  pauseMenuUI: {fileID: 0}
+  pauseMenuUI: {fileID: 1975537310480828796, guid: defee59ae5fd4d54584613401084dba1, type: 3}
   audioSource: {fileID: -7267882920293624489}
   spawnNoise: {fileID: 8300000, guid: c36c4b84ed9ec6a42bbd40f79a17e88c, type: 3}
 --- !u!82 &-7267882920293624489

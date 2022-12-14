@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] InputAction joinAction;
     [SerializeField] InputAction leaveAction;
 
+    PlayerInputHandler inputHandler;
 
+    public GameObject pauseMenuUI;
 
     // Instances of the Game Manager
     public static GameManager gameManagerInstance = null;
@@ -55,8 +57,8 @@ public class GameManager : MonoBehaviour
         spawnPoints[0] = GameObject.FindGameObjectWithTag("SpawnPointOne");
         spawnPoints[1] = GameObject.FindGameObjectWithTag("SpawnPointTwo");
 
-        //add the first player to the world, no split screen, default input controls
 
+        //add the first player to the world, no split screen, default input controls
         //PlayerInputManager.instance.JoinPlayer(0, -1, null);
         //PlayerInputManager.instance.JoinPlayer(1, -1, null);
     }

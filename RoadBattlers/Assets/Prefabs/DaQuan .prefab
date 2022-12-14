@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 7001067185087898212}
   m_Layer: 0
   m_Name: 'DaQuan '
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   projectileRightPrefab: {fileID: 5022128463713865049, guid: 2fb9f34e63ed9ff41968e5f986857895, type: 3}
   horizontalInput: {x: 0, y: 0}
   isFacingRight: 0
+  health: 100
 --- !u!61 &3845008923113287631
 BoxCollider2D:
   m_ObjectHideFlags: 0
