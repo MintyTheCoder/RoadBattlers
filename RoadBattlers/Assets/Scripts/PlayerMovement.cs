@@ -82,8 +82,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-       // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
+        // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
+        if (isFacingRight == false)
+        {
+            renderer.flipX = true;
+        }
 
+        else if (isFacingRight == true)
+        {
+            renderer.flipX = false;
+        }
        // MovePlayer();
 
     }

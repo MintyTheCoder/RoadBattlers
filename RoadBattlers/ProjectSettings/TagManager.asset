@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - SpawnPointOne
   - Border
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

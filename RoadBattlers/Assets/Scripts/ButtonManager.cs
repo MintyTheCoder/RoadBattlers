@@ -4,13 +4,15 @@ using UnityEngine;
 
 //needed to switch scenes in Unity
 using UnityEngine.SceneManagement;
+
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField] private int currentScene;
-
     //added for sounds
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip buttonClick;
+
+    public GameObject pauseMenuUI;
     private void Start()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
@@ -18,7 +20,7 @@ public class ButtonManager : MonoBehaviour
     public void GameStart()
     {
         //switch to next scene or level
-        currentScene++;//increase to next level number
+        //currentScene++;//increase to next level number
 
         //allows you to delay something from happening
         StartCoroutine(ChangeToScene(currentScene));
@@ -34,6 +36,10 @@ public class ButtonManager : MonoBehaviour
         StartCoroutine(MainMenu());
     }
 
+    public void ResumeGame()
+    {
+        StartCoroutine(Resume());
+    }
     public IEnumerator ChangeToScene(int changeSceneTo)
     {
         //add for sound effect
@@ -65,4 +71,17 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         
     }
+
+    public IEnumerator Resume()
+    {
+        //add for sound effect
+        audioSource.PlayOneShot(buttonClick);
+
+        pauseMenuUI.SetActive(false);
+
+        Time.timeScale = 1;
+        yield return true;
+    }
+
+    
 }

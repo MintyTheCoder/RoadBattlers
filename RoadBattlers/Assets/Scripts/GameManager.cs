@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] InputAction joinAction;
     [SerializeField] InputAction leaveAction;
 
- 
+
 
     // Instances of the Game Manager
     public static GameManager gameManagerInstance = null;
@@ -25,16 +25,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(gameManagerInstance == null)
+        if (gameManagerInstance == null)
         {
             //if there is no game manager in the world
             //then this will be the game manager
             gameManagerInstance = this;
         }
-        else if(gameManagerInstance != null)
+        else if (gameManagerInstance != null)
         {
             //if there is already a game manager in the world
-           // Destroy it so there will not be more than one
+            // Destroy it so there will not be more than one
             Destroy(gameObject);
         }
 
@@ -61,14 +61,14 @@ public class GameManager : MonoBehaviour
         //PlayerInputManager.instance.JoinPlayer(1, -1, null);
     }
 
-     //Input Manager Default method names
-     void OnPlayerJoined(PlayerInput playerInput)
+    //Input Manager Default method names
+    void OnPlayerJoined(PlayerInput playerInput)
     {
         //add the player to the list after they join the game
         playerList.Add(playerInput);
 
         //send the information to any other scripts that want the information
-        if(PlayerJoinedGame != null)
+        if (PlayerJoinedGame != null)
         {
             PlayerJoinedGame(playerInput);
         }
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
     }*/
 
-    void JoinAction (InputAction.CallbackContext context)
+    void JoinAction(InputAction.CallbackContext context)
     {
         PlayerInputManager.instance.JoinPlayerFromActionIfNotAlreadyJoined(context);
     }
@@ -88,4 +88,5 @@ public class GameManager : MonoBehaviour
     {
 
     }*/
+
 }

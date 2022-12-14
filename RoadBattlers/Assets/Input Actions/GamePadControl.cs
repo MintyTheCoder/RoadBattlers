@@ -53,6 +53,15 @@ public partial class @GamePadControl : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""9019d02f-91e2-41ca-88f4-17b9eb914799"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,6 +97,28 @@ public partial class @GamePadControl : IInputActionCollection2, IDisposable
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba005af5-50d0-49e9-9bd4-3217ab0a2110"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66ac331b-75e9-4b13-9c60-564b37d42044"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -99,6 +130,7 @@ public partial class @GamePadControl : IInputActionCollection2, IDisposable
         m_GamepadController_Move = m_GamepadController.FindAction("Move", throwIfNotFound: true);
         m_GamepadController_Jump = m_GamepadController.FindAction("Jump", throwIfNotFound: true);
         m_GamepadController_Attack = m_GamepadController.FindAction("Attack", throwIfNotFound: true);
+        m_GamepadController_Pause = m_GamepadController.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -161,6 +193,7 @@ public partial class @GamePadControl : IInputActionCollection2, IDisposable
     private readonly InputAction m_GamepadController_Move;
     private readonly InputAction m_GamepadController_Jump;
     private readonly InputAction m_GamepadController_Attack;
+    private readonly InputAction m_GamepadController_Pause;
     public struct GamepadControllerActions
     {
         private @GamePadControl m_Wrapper;
@@ -168,6 +201,7 @@ public partial class @GamePadControl : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_GamepadController_Move;
         public InputAction @Jump => m_Wrapper.m_GamepadController_Jump;
         public InputAction @Attack => m_Wrapper.m_GamepadController_Attack;
+        public InputAction @Pause => m_Wrapper.m_GamepadController_Pause;
         public InputActionMap Get() { return m_Wrapper.m_GamepadController; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -186,6 +220,9 @@ public partial class @GamePadControl : IInputActionCollection2, IDisposable
                 @Attack.started -= m_Wrapper.m_GamepadControllerActionsCallbackInterface.OnAttack;
                 @Attack.performed -= m_Wrapper.m_GamepadControllerActionsCallbackInterface.OnAttack;
                 @Attack.canceled -= m_Wrapper.m_GamepadControllerActionsCallbackInterface.OnAttack;
+                @Pause.started -= m_Wrapper.m_GamepadControllerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_GamepadControllerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_GamepadControllerActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_GamepadControllerActionsCallbackInterface = instance;
             if (instance != null)
@@ -199,6 +236,9 @@ public partial class @GamePadControl : IInputActionCollection2, IDisposable
                 @Attack.started += instance.OnAttack;
                 @Attack.performed += instance.OnAttack;
                 @Attack.canceled += instance.OnAttack;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -208,5 +248,6 @@ public partial class @GamePadControl : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

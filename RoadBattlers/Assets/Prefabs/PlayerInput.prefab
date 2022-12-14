@@ -107,6 +107,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e09fa913-f17b-47f6-90c7-79af0a9b4eb1
     m_ActionName: Gamepad Controller/Attack[/DualSenseGamepadHID/buttonEast,/DualSenseGamepadHID1/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 173999962281365820}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9019d02f-91e2-41ca-88f4-17b9eb914799
+    m_ActionName: Gamepad Controller/Pause[/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gamepad Controller
@@ -125,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1Skin: {fileID: 2915422701534184149, guid: 1cd9f7dc384e1c34d8da03cfd7358563, type: 3}
-  player2Skin: {fileID: 0}
+  player2Skin: {fileID: 2915422701534184149, guid: 1cd9f7dc384e1c34d8da03cfd7358563, type: 3}
   characters:
   - {fileID: 2915422701534184149, guid: 1cd9f7dc384e1c34d8da03cfd7358563, type: 3}
   - {fileID: 0}
@@ -133,6 +149,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  pauseMenuUI: {fileID: 0}
   audioSource: {fileID: -7267882920293624489}
   spawnNoise: {fileID: 8300000, guid: c36c4b84ed9ec6a42bbd40f79a17e88c, type: 3}
 --- !u!82 &-7267882920293624489

@@ -12,8 +12,12 @@ public class PlayerInputHandler : MonoBehaviour
     public GameObject[] characters = new GameObject[6];
 
     PlayerMovement playerMovementScript; //on each player
+    ButtonManager buttonManager;
     private Vector2 spawnPoint;
+    public GameObject pauseMenuUI;
+    GameObject ButtonManager;
 
+    private bool isPaused = false;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip spawnNoise;
     //SerializeField] AudioClip damageNoise;
@@ -29,14 +33,14 @@ public class PlayerInputHandler : MonoBehaviour
             //make a player prefab in the game
             //and get access to the script on the player prefab
             playerMovementScript = GameObject.Instantiate(player1Skin, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
-
+            playerMovementScript.isFacingRight = true;
             audioSource.PlayOneShot(spawnNoise);
 
             transform.parent = playerMovementScript.transform;
             transform.position = playerMovementScript.transform.position;
             Debug.Log("Loop1");
             handlerInstance = this;
-            
+
         }
 
         else if (handlerInstance != null)
@@ -45,6 +49,7 @@ public class PlayerInputHandler : MonoBehaviour
             //make a player prefab in the game
             //and get access to the script on the player prefab
             playerMovementScript = GameObject.Instantiate(player2Skin, spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
+            playerMovementScript.isFacingRight = false;
 
             audioSource.PlayOneShot(spawnNoise);
 
@@ -53,7 +58,7 @@ public class PlayerInputHandler : MonoBehaviour
             Debug.Log("Loop 2");
         }
 
-    } 
+    }
 
     //get the event from the gamepad
     public void OnMove(InputAction.CallbackContext context)
@@ -74,5 +79,13 @@ public class PlayerInputHandler : MonoBehaviour
     {
         //send the command to the player movement script
         playerMovementScript.OnAttack();
+    }
+
+    public void OnPause()
+    {
+        pauseMenuUI = GameObject.FindGameObjectWithTag("PauseMenu");
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0;
+        Debug.Log("Pause");
     }
 }
