@@ -14,7 +14,7 @@ public class PlayerInputHandler : MonoBehaviour
     PlayerMovement playerMovementScript; //on each player
     ButtonManager buttonManager;
     private Vector2 spawnPoint;
-    public GameObject pauseMenuUI;
+    [SerializeField] GameObject pauseMenuUI;
     GameObject ButtonManager;
 
     private bool isPaused = false;
@@ -23,8 +23,14 @@ public class PlayerInputHandler : MonoBehaviour
     //SerializeField] AudioClip damageNoise;
 
     public static PlayerInputHandler handlerInstance;
+
+    private void Start()
+    {
+        pauseMenuUI = GameObject.FindGameObjectWithTag("PauseMenu");
+    }
     private void Awake()
     {
+        
         //get a spawn point from the game manager object
 
         if (handlerInstance == null)
@@ -83,7 +89,6 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnPause()
     {
-        pauseMenuUI = GameObject.FindGameObjectWithTag("PauseMenu");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         Debug.Log("Pause");
