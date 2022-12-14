@@ -12,12 +12,11 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip buttonClick;
 
-    public GameObject pauseMenuUI;
-
     private void Start()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
     }
+
     public void GameStart()
     {
         //switch to next scene or level
@@ -36,11 +35,7 @@ public class ButtonManager : MonoBehaviour
     {
         StartCoroutine(MainMenu());
     }
-
-    public void ResumeGame()
-    {
-        StartCoroutine(Resume());
-    }
+    
     public IEnumerator ChangeToScene(int changeSceneTo)
     {
         //add for sound effect
@@ -72,17 +67,5 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         
     }
-
-    public IEnumerator Resume()
-    {
-        //add for sound effect
-        audioSource.PlayOneShot(buttonClick);
-
-        pauseMenuUI.SetActive(false);
-
-        Time.timeScale = 1;
-        yield return true;
-    }
-
     
 }

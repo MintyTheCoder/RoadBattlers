@@ -421,7 +421,6 @@ MonoBehaviour:
   currentScene: 0
   audioSource: {fileID: 217820630}
   buttonClick: {fileID: 8300000, guid: ad30863a6790d664cb9b518d366d1f4e, type: 3}
-  pauseMenuUI: {fileID: 0}
 --- !u!1 &360280313
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &473357517
 MonoBehaviour:
   m_ObjectHideFlags: 0
