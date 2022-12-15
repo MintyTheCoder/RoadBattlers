@@ -12,7 +12,7 @@ public class PlayerInputHandler : MonoBehaviour
     public GameObject[] characters = new GameObject[6];
 
     PlayerMovement playerMovementScript; //on each player
-    private Vector2 spawnPoint;
+    public Vector2 spawnPoint;
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip spawnNoise;
@@ -78,4 +78,5 @@ public class PlayerInputHandler : MonoBehaviour
         //send the command to the player movement script
         playerMovementScript.OnAttack();
     }
+
 }

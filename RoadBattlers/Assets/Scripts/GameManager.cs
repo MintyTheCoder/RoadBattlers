@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject player1;
+    public GameObject player2;
     // Instances of the Game Manager
     public static GameManager gameManagerInstance = null;
 
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
         spawnPoints[0] = GameObject.FindGameObjectWithTag("SpawnPointOne");
         spawnPoints[1] = GameObject.FindGameObjectWithTag("SpawnPointTwo");
 
-
+        
         //add the first player to the world, no split screen, default input controls
         //PlayerInputManager.instance.JoinPlayer(0, -1, null);
         //PlayerInputManager.instance.JoinPlayer(1, -1, null);
@@ -81,6 +83,13 @@ public class GameManager : MonoBehaviour
 
     }*/
 
+    private void Update()
+    {
+        
+
+
+       
+    }
     void JoinAction(InputAction.CallbackContext context)
     {
         PlayerInputManager.instance.JoinPlayerFromActionIfNotAlreadyJoined(context);
@@ -90,5 +99,5 @@ public class GameManager : MonoBehaviour
     {
 
     }*/
-
+  
 }

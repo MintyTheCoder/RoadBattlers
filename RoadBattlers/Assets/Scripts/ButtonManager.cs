@@ -22,7 +22,6 @@ public class ButtonManager : MonoBehaviour
         //switch to next scene or level
         //currentScene++;//increase to next level number
 
-        //allows you to delay something from happening
         StartCoroutine(ChangeToScene(currentScene));
     }
 
@@ -41,7 +40,7 @@ public class ButtonManager : MonoBehaviour
         //add for sound effect
         audioSource.PlayOneShot(buttonClick);
         //wait a few seconds before switching to the next scene
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
         //load the next scene
         SceneManager.LoadScene(changeSceneTo);
@@ -52,7 +51,7 @@ public class ButtonManager : MonoBehaviour
         //add for sound effect
         audioSource.PlayOneShot(buttonClick);
         //wait a few seconds before switching to the next scene
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
 
         //load the next scene
         Application.Quit();
@@ -63,7 +62,7 @@ public class ButtonManager : MonoBehaviour
         //add for sound effect
         audioSource.PlayOneShot(buttonClick);
         //wait a few seconds before switching to the next scene
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene("Main Menu");
         
     }

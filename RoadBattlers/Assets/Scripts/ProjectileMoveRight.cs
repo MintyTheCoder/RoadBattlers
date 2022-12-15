@@ -33,4 +33,12 @@ public class ProjectileMoveRight : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player1"  || collision.tag == "Player2")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
