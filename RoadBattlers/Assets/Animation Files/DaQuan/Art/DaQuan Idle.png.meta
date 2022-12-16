@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86ca4dfd7f38e874195924b7a6e9d9b1
-      internalID: -1727552432
+      spriteID: 6aa48b595176fd741ae925a009bf35d4
+      internalID: -1138380522
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d460166dd84dadb4b8c36e0aa707ef0c
-      internalID: -2059879831
+      spriteID: 495a048e8e21f984083cb04e37320330
+      internalID: -1333711425
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9221b828b38b6554f845804f06ddbbc6
-      internalID: -1089802907
+      spriteID: 68b15c71bdb26eb44ae4aa13f8ba8701
+      internalID: 1304075966
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DaQuan Idle_2: -1089802907
-      DaQuan Idle_1: -2059879831
-      DaQuan Idle_0: -1727552432
+      DaQuan Idle_2: 1304075966
+      DaQuan Idle_1: -1333711425
+      DaQuan Idle_0: -1138380522
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

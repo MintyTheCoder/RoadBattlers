@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement: MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 5.0f;
     [SerializeField] private float jumpPower = 5.0f;
@@ -29,28 +29,30 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 horizontalInput;
     public bool isFacingRight;
+    public bool canShoot = true;
 
     public int lives = 3;
 
     public int health = 100;
+    
     private void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
         playerRigidbody = GetComponent<Rigidbody2D>();
-        
+
     }
-    
+
     public void OnMove(InputAction.CallbackContext inputValue)
     {
         horizontalInput = inputValue.ReadValue<Vector2>();
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput.x));
         playerRigidbody.velocity = new Vector2(horizontalInput.x * playerSpeed, playerRigidbody.velocity.y);
-        if(horizontalInput.x > 0)
+        if (horizontalInput.x > 0)
         {
             isFacingRight = true;
             renderer.flipX = false;
         }
-        else if(horizontalInput.x < 0)
+        else if (horizontalInput.x < 0)
         {
             isFacingRight = false;
             renderer.flipX = true;
@@ -59,9 +61,15 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump()
     {
-        if ( IsGrounded())
+        if (IsGrounded())
         {
             playerRigidbody.velocity = new Vector2(0, jumpPower);
+            animator.SetBool("Jump", true);
+        }
+
+        else
+        {
+            animator.SetBool("Jump", false);
         }
     }
 
@@ -72,35 +80,37 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-   public void OnAttack()
-   {
+    public void OnAttack()
+    {
         Debug.Log("Attack!");
 
-        if (isFacingRight)
+        if (isFacingRight && canShoot == true)
         {
-            Instantiate(projectileRightPrefab, shotOffSetRight.transform.position, Quaternion.identity);
+            Instantiate(projectileRightPrefab, transform.position, Quaternion.identity);
         }
 
-        else if (!isFacingRight)
+        else if (!isFacingRight && canShoot == true)
         {
-            Instantiate(projectileLeftPrefab, shotOffSetLeft.transform.position, Quaternion.identity);
+            Instantiate(projectileLeftPrefab, transform.position, Quaternion.identity);
         }
+
+
+
+        canShoot = false;
+        StartCoroutine(DelayPress());
     }
-
+    public IEnumerator DelayPress()
+    {
+        //canShoot should be true 
+        yield return new WaitForSeconds(2);
+        canShoot = true;
+    }
 
     private void Update()
     {
         // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
-        if (isFacingRight == false)
-        {
-            renderer.flipX = true;
-        }
 
-        else if (isFacingRight == true)
-        {
-            renderer.flipX = false;
-        }
-       // MovePlayer();
+        // MovePlayer();
 
         if (health <= 0)
         {
@@ -111,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
 
         //determines game over using lives
 
-        if(lives == 0)
+        if (lives == 0)
         {
             Destroy(gameObject);
             if (gameObject.tag == "player1")
@@ -120,11 +130,11 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    private void MovePlayer()
-    {
+    //private void MovePlayer()
+    //{
         //var horizontalInput = Input.GetAxisRaw("Horizontal");
-        playerRigidbody.velocity = new Vector2(horizontalInput.x * playerSpeed, playerRigidbody.velocity.y);
-    }
+        //playerRigidbody.velocity = new Vector2(horizontalInput.x * playerSpeed, playerRigidbody.velocity.y);
+    //}
     // private void Jump() => _playerRigidbody.velocity = new Vector2(0, jumpPower);  
 
     private void OnTriggerEnter2D(Collider2D other)
