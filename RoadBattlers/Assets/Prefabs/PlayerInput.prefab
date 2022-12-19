@@ -751,13 +751,15 @@ MonoBehaviour:
   player1Skin: {fileID: 2915422701534184149, guid: b7e4fdff6374dc344abe291cacccfaa5, type: 3}
   player2Skin: {fileID: 2915422701534184149, guid: b7e4fdff6374dc344abe291cacccfaa5, type: 3}
   characters:
-  - {fileID: 2915422701534184149, guid: 1cd9f7dc384e1c34d8da03cfd7358563, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2915422701534184149, guid: 03b63ffde50c7924fbeb232d9b7d4aef, type: 3}
+  - {fileID: 2915422701534184149, guid: b7e4fdff6374dc344abe291cacccfaa5, type: 3}
+  - {fileID: 2915422701534184149, guid: a3ae68d36dcea754ba91cafbb0abd21d, type: 3}
+  - {fileID: 2915422701534184149, guid: 7513804cc3a4c2f4682b727584e2e160, type: 3}
+  - {fileID: 2915422701534184149, guid: 85c7e4f317b017a4cb0b67af0c9dc170, type: 3}
   - {fileID: 0}
   spawnPoint: {x: 0, y: 0}
+  playerOneSelectedSkin: 0
+  playerTwoSelectedSkin: 0
   audioSource: {fileID: -7267882920293624489}
   spawnNoise: {fileID: 8300000, guid: c36c4b84ed9ec6a42bbd40f79a17e88c, type: 3}
 --- !u!82 &-7267882920293624489

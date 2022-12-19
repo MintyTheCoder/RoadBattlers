@@ -17,12 +17,12 @@ public class ButtonManager : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().buildIndex;
     }
 
-    public void GameStart()
+    public void SelectScreens()
     {
         //switch to next scene or level
         //currentScene++;//increase to next level number
 
-        StartCoroutine(ChangeToScene(currentScene));
+        StartCoroutine(SelectScreen());
     }
 
     public void GameQuit()
@@ -35,7 +35,7 @@ public class ButtonManager : MonoBehaviour
         StartCoroutine(MainMenu());
     }
     
-    public IEnumerator ChangeToScene(int changeSceneTo)
+    public IEnumerator SelectScreen()
     {
         //add for sound effect
         audioSource.PlayOneShot(buttonClick);
@@ -43,7 +43,7 @@ public class ButtonManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
 
         //load the next scene
-        SceneManager.LoadScene(changeSceneTo);
+        SceneManager.LoadScene("Select Screens");
     }
 
     public IEnumerator Quit()

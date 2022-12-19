@@ -14,6 +14,8 @@ public class PlayerInputHandler : MonoBehaviour
     PlayerMovement playerMovementScript; //on each player
     public Vector2 spawnPoint;
 
+    public int playerOneSelectedSkin, playerTwoSelectedSkin;
+
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip spawnNoise;
     //SerializeField] AudioClip damageNoise;
@@ -22,7 +24,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Awake()
     {
-        
+        player1Skin = characters[playerOneSelectedSkin];
+        player2Skin = characters[playerTwoSelectedSkin];
+
         //get a spawn point from the game manager object
 
         if (handlerInstance == null)
@@ -56,6 +60,11 @@ public class PlayerInputHandler : MonoBehaviour
             Debug.Log("Loop 2");
         }
 
+    }
+
+    private void Update()
+    {
+        
     }
 
     //get the event from the gamepad

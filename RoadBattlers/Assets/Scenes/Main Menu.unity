@@ -450,8 +450,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1074254342}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: GameStart
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: SelectScreens
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -713,7 +713,6 @@ MonoBehaviour:
   currentScene: 0
   audioSource: {fileID: 1074254341}
   buttonClick: {fileID: 8300000, guid: a1801af3f9263b64ab440ff33d8bb952, type: 3}
-  pauseMenuUI: {fileID: 0}
 --- !u!4 &1074254343
 Transform:
   m_ObjectHideFlags: 0
