@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 1dda979d7a350b14d86138cd36e5e6bf
   - enabled: 1
-    path: Assets/Scenes/Cloud Map.unity
+    path: Assets/Scenes/Sky City.unity
     guid: 3894c13bead5a114b926bc4046732a4d
   - enabled: 1
-    path: Assets/Scenes/Sonic Scene.unity
+    path: Assets/Scenes/Blu Island.unity
     guid: 4e342f483ab79ba46aa549b53adbe7b7
   - enabled: 1
     path: Assets/Scenes/Test Map.unity

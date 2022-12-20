@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3616701185122473812}
   - component: {fileID: 8222145457975364208}
   - component: {fileID: -5223941892649481143}
-  - component: {fileID: 629280137607875714}
+  - component: {fileID: 7126172902970784915}
   m_Layer: 0
   m_Name: KnifeLeft
   m_TagString: Untagged
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ee2b50ad06a07fb49b541bd98a6a1b5f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.32, y: 0.32}
@@ -124,7 +124,7 @@ CircleCollider2D:
   m_Offset: {x: 0.0022813233, y: 0.036412895}
   serializedVersion: 2
   m_Radius: 0.12447752
---- !u!114 &629280137607875714
+--- !u!114 &7126172902970784915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,9 +133,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 845485211546344522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31492aed78d8a174b92f65959b46e9a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cbb672ff2054c34abf21d633c392570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sp: {fileID: 3616701185122473812}
-  rb: {fileID: 8222145457975364208}
+  rb: {fileID: 0}
   speed: 5

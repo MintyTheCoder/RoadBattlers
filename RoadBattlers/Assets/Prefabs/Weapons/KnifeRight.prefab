@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8951170308680599111}
   - component: {fileID: 4328811172476050275}
   - component: {fileID: -4186207472146027060}
-  - component: {fileID: 738022964994864298}
+  - component: {fileID: 1152563788136159251}
   m_Layer: 0
   m_Name: KnifeRight
   m_TagString: Untagged
@@ -124,7 +124,7 @@ CircleCollider2D:
   m_Offset: {x: 0.0022813233, y: 0.036412895}
   serializedVersion: 2
   m_Radius: 0.12447752
---- !u!114 &738022964994864298
+--- !u!114 &1152563788136159251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,5 +136,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c450bc22e04fe5e4cb448f20e1829bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 4328811172476050275}
+  rb: {fileID: 0}
   speed: 5

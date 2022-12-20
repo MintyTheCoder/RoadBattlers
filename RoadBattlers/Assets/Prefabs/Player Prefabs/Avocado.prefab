@@ -108,7 +108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1708714768, guid: c9a67ef80e017b245b4435fc5e6f33f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -154,6 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 3
   jumpPower: 5
+  shotOffSetRight: {fileID: 0}
+  shotOffSetLeft: {fileID: 0}
   animator: {fileID: -1918102095409551305}
   groundCheck: {fileID: 1710505479}
   groundCheckRadius: 0.1
@@ -162,10 +164,11 @@ MonoBehaviour:
     m_Bits: 64
   projectileLeftPrefab: {fileID: 845485211546344522, guid: 64a0bf5c1ef5cbf4abc959f54a2c1db7, type: 3}
   projectileRightPrefab: {fileID: 5022128463713865049, guid: 2fb9f34e63ed9ff41968e5f986857895, type: 3}
-  verticalInput: {x: 0, y: 0}
   horizontalInput: {x: 0, y: 0}
   isFacingRight: 0
   canShoot: 1
+  lives: 3
+  health: 100
 --- !u!61 &3845008923113287631
 BoxCollider2D:
   m_ObjectHideFlags: 0

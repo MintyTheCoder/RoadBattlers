@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8222145457975364208}
   - component: {fileID: 6270469956335779650}
   - component: {fileID: -5223941892649481143}
-  - component: {fileID: 8326066938596797936}
+  - component: {fileID: 6729344605389776678}
   m_Layer: 0
   m_Name: ShurikenLeft
   m_TagString: Untagged
@@ -145,7 +145,7 @@ CircleCollider2D:
   m_Offset: {x: 0.0022813233, y: 0.036412895}
   serializedVersion: 2
   m_Radius: 0.12447752
---- !u!114 &8326066938596797936
+--- !u!114 &6729344605389776678
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,5 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbb672ff2054c34abf21d633c392570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 8222145457975364208}
+  rb: {fileID: 0}
   speed: 5
