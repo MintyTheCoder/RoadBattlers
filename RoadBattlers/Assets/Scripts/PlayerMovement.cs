@@ -7,9 +7,9 @@ public class PlayerMovement: MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 5.0f;
     [SerializeField] private float jumpPower = 5.0f;
-    public GameObject shotOffSetRight;
-    public GameObject shotOffSetLeft;
+    public GameObject shotOffSetRight, shotOffSetLeft;
 
+    public GameObject punchLeft, punchRight;
 
     private Rigidbody2D playerRigidbody;
     private SpriteRenderer renderer;
@@ -17,6 +17,7 @@ public class PlayerMovement: MonoBehaviour
     public Animator animator;
 
     private Vector2 respawnPoint = new Vector2(0, 2);
+    public Vector2 playerPos;
     //private Vector2 moveDirection;
 
     public Transform groundCheck;
@@ -29,7 +30,7 @@ public class PlayerMovement: MonoBehaviour
 
     public Vector2 horizontalInput;
     public bool isFacingRight;
-    public bool canShoot = true;
+    public bool canAttack = true;
 
     public int lives = 3;
 
@@ -39,7 +40,7 @@ public class PlayerMovement: MonoBehaviour
     {
         renderer = GetComponent<SpriteRenderer>();
         playerRigidbody = GetComponent<Rigidbody2D>();
-
+        
     }
 
     public void OnMove(InputAction.CallbackContext inputValue)
@@ -80,30 +81,51 @@ public class PlayerMovement: MonoBehaviour
     }
 
 
-    public void OnAttack()
+    public void OnThrow()
     {
-        Debug.Log("Attack!");
+        Debug.Log("Throw!");
 
-        if (isFacingRight && canShoot == true)
+        if (isFacingRight && canAttack == true)
         {
-            Instantiate(projectileRightPrefab, transform.position, Quaternion.identity);
+            Instantiate(projectileRightPrefab, shotOffSetRight.transform.position, Quaternion.identity);
         }
 
-        else if (!isFacingRight && canShoot == true)
+        else if (!isFacingRight && canAttack == true)
         {
-            Instantiate(projectileLeftPrefab, transform.position, Quaternion.identity);
+            Instantiate(projectileLeftPrefab, shotOffSetLeft.transform.position, Quaternion.identity);
         }
 
-
-
-        canShoot = false;
+        canAttack = false;
         StartCoroutine(DelayPress());
+    }
+
+    public void OnPunch()
+    {
+        Debug.Log("Punch!");
+
+        if (isFacingRight && canAttack == true)
+        {
+            Instantiate(punchRight, shotOffSetRight.transform.position, Quaternion.identity);
+        }
+
+        else if (!isFacingRight && canAttack == true)
+        {
+            Instantiate(punchLeft, shotOffSetLeft.transform.position, Quaternion.identity);
+        }
+
+        canAttack = false;
+        StartCoroutine(DelayPress());
+    }
+
+    public void OnSpecial()
+    {
+        
     }
     public IEnumerator DelayPress()
     {
         //canShoot should be true 
-        yield return new WaitForSeconds(2);
-        canShoot = true;
+        yield return new WaitForSeconds(3);
+        canAttack = true;
     }
 
     private void Update()
@@ -111,6 +133,7 @@ public class PlayerMovement: MonoBehaviour
         // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
 
         // MovePlayer();
+        playerPos = transform.position;
 
         if (health <= 0)
         {

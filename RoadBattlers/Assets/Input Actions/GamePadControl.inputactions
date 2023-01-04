@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
+                    "name": "Throw",
                     "type": "Button",
                     "id": "e09fa913-f17b-47f6-90c7-79af0a9b4eb1",
                     "expectedControlType": "Button",
@@ -36,6 +36,24 @@
                     "name": "Pause",
                     "type": "Button",
                     "id": "9019d02f-91e2-41ca-88f4-17b9eb914799",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Punch",
+                    "type": "Button",
+                    "id": "b9bc436f-a6d7-4ca7-a477-f48c7a996522",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Special Attack",
+                    "type": "Button",
+                    "id": "95c34f19-9639-4715-bbaa-f7a054dbf33a",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -68,22 +86,11 @@
                 {
                     "name": "",
                     "id": "36706427-2a73-4206-b51c-d5cbc7afed04",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ba005af5-50d0-49e9-9bd4-3217ab0a2110",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pause",
+                    "action": "Throw",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -95,6 +102,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a65a8b20-2bf6-4e81-932d-de9f6325be68",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Punch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ef8e4d7-7932-405e-b380-217706a2595d",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Special Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

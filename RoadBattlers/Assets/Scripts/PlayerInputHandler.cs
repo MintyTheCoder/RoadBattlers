@@ -84,10 +84,23 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
     //get the event from the gamepad
-    public void OnAttack()
+    public void OnThrow()
     {
         //send the command to the player movement script
-        playerMovementScript.OnAttack();
+        playerMovementScript.OnThrow();
     }
 
+    //get the event from the gamepad
+    public void OnPunch()
+    {
+        //send the command to the player movement script
+        playerMovementScript.OnPunch();
+    }
+
+    //get the event from the gamepad
+    public void OnSpecial()
+    {
+        //send the command to the player movement script
+        playerMovementScript.OnSpecial();
+    }
 }
