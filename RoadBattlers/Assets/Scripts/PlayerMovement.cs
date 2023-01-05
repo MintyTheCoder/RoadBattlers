@@ -11,6 +11,7 @@ public class PlayerMovement: MonoBehaviour
 
     public GameObject punchLeft, punchRight;
 
+    public GameObject bombLeft, bombRight;
     private Rigidbody2D playerRigidbody;
     private SpriteRenderer renderer;
 
@@ -31,8 +32,9 @@ public class PlayerMovement: MonoBehaviour
     public Vector2 horizontalInput;
     public bool isFacingRight;
     public bool canAttack = true;
+    public bool specialAllowed = false;
 
-    public int lives = 3;
+    private int lives = 3;
 
     public int health = 100;
     
@@ -40,9 +42,16 @@ public class PlayerMovement: MonoBehaviour
     {
         renderer = GetComponent<SpriteRenderer>();
         playerRigidbody = GetComponent<Rigidbody2D>();
+
+        StartCoroutine(SpecialTimer());
         
     }
 
+    public IEnumerator SpecialTimer()
+    {
+        yield return new WaitForSeconds(200);
+        specialAllowed = true;
+    }
     public void OnMove(InputAction.CallbackContext inputValue)
     {
         horizontalInput = inputValue.ReadValue<Vector2>();
@@ -119,8 +128,28 @@ public class PlayerMovement: MonoBehaviour
 
     public void OnSpecial()
     {
-        
+
+
+        if (specialAllowed)
+        {
+            Debug.Log("ALLAHU AKBAR!! FOR ISLAM!!");
+
+            if (isFacingRight && canAttack == true)
+            {
+                Instantiate(bombRight, shotOffSetRight.transform.position, Quaternion.identity);
+            }
+
+            else if (!isFacingRight && canAttack == true)
+            {
+                Instantiate(bombLeft, shotOffSetLeft.transform.position, Quaternion.identity);
+            }
+
+            canAttack = false;
+            StartCoroutine(DelayPress());
+        }
     }
+
+    
     public IEnumerator DelayPress()
     {
         //canShoot should be true 
@@ -130,6 +159,7 @@ public class PlayerMovement: MonoBehaviour
 
     private void Update()
     {
+        
         // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
 
         // MovePlayer();
@@ -147,11 +177,15 @@ public class PlayerMovement: MonoBehaviour
         if (lives == 0)
         {
             Destroy(gameObject);
+            Time.timeScale = 0f;
+
             if (gameObject.tag == "player1")
             {
 
             }
         }
+
+
     }
     //private void MovePlayer()
     //{
@@ -162,9 +196,19 @@ public class PlayerMovement: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Bullet")
+        if (other.tag == "Projectile")
         {
             health = health - 5;
+        }
+
+        else if (other.tag == "Punch")
+        {
+            health = health - 10;
+        }
+
+        else if (other.tag == "Bomb")
+        {
+            health = health - 40;
         }
 
         else if (other.tag == "DeathBox")
@@ -172,6 +216,7 @@ public class PlayerMovement: MonoBehaviour
             lives = lives - 1;
             Debug.Log("life lost");
             transform.position = respawnPoint;
+            
         }
     }
 }

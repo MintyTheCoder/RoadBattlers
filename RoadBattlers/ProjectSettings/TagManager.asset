@@ -8,12 +8,13 @@ TagManager:
   - Ground
   - SpawnPointOne
   - PauseMenu
-  - Bullet
   - DeathBox
   - Player 1
   - Player 2
   - Border
   - Punch
+  - Projectile
+  - Bomb
   layers:
   - Default
   - TransparentFX
