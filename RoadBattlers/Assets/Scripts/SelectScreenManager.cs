@@ -68,7 +68,7 @@ public class SelectScreenManager : MonoBehaviour
     {
         audioSource.PlayOneShot(buttonClick);
         playerOneSelected = true;
-        PlayerPrefs.SetInt("player1SkinNumber", 1);
+        PlayerPrefs.SetInt("player1SkinNumber", 0);
         //inputHandler.playerOneSelectedSkin = 1;
         yield return new WaitForSeconds(1);
     }
@@ -77,7 +77,7 @@ public class SelectScreenManager : MonoBehaviour
     {
         audioSource.PlayOneShot(buttonClick);
         playerOneSelected = true;
-        PlayerPrefs.SetInt("player1SkinNumber", 2);
+        PlayerPrefs.SetInt("player1SkinNumber", 1);
         //inputHandler.playerOneSelectedSkin = 2;
         yield return new WaitForSeconds(1);
     }
@@ -86,7 +86,7 @@ public class SelectScreenManager : MonoBehaviour
     {
         audioSource.PlayOneShot(buttonClick);
         playerOneSelected = true;
-        PlayerPrefs.SetInt("player1SkinNumber", 3);
+        PlayerPrefs.SetInt("player1SkinNumber", 2);
         //inputHandler.playerOneSelectedSkin = 3;
         yield return new WaitForSeconds(1);
     }
@@ -95,7 +95,7 @@ public class SelectScreenManager : MonoBehaviour
     {
         audioSource.PlayOneShot(buttonClick);
         playerTwoSelected = true;
-        PlayerPrefs.SetInt("player2SkinNumber", 4);
+        PlayerPrefs.SetInt("player2SkinNumber", 3);
         //inputHandler.playerTwoSelectedSkin = 4;
         yield return new WaitForSeconds(1);
     }
@@ -104,7 +104,7 @@ public class SelectScreenManager : MonoBehaviour
     {
         audioSource.PlayOneShot(buttonClick);
         playerTwoSelected = true;
-        PlayerPrefs.SetInt("player2SkinNumber", 5);
+        PlayerPrefs.SetInt("player2SkinNumber", 4);
         //inputHandler.playerTwoSelectedSkin = 5;
         yield return new WaitForSeconds(1);
     }
@@ -112,7 +112,7 @@ public class SelectScreenManager : MonoBehaviour
     {
         audioSource.PlayOneShot(buttonClick);
         playerTwoSelected = true;
-        PlayerPrefs.SetInt("player2SkinNumber", 6);
+        PlayerPrefs.SetInt("player2SkinNumber", 5);
         //inputHandler.playerTwoSelectedSkin = 6;
         yield return new WaitForSeconds(1);
     }
