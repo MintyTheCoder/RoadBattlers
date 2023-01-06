@@ -67,6 +67,8 @@ public class PlayerMovement: MonoBehaviour
             isFacingRight = false;
             renderer.flipX = true;
         }
+
+        
     }
 
     public void OnJump()
@@ -132,7 +134,7 @@ public class PlayerMovement: MonoBehaviour
 
         if (specialAllowed)
         {
-            Debug.Log("ALLAHU AKBAR!! FOR ISLAM!!");
+            Debug.Log("Special!!");
 
             if (isFacingRight && canAttack == true)
             {
@@ -159,7 +161,16 @@ public class PlayerMovement: MonoBehaviour
 
     private void Update()
     {
-        
+        while (renderer.flipX)
+        {
+            isFacingRight = false;
+        }
+
+        while (!renderer.flipX)
+        {
+            isFacingRight = true;
+        }
+
         // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
 
         // MovePlayer();
@@ -176,6 +187,7 @@ public class PlayerMovement: MonoBehaviour
 
         if (lives == 0)
         {
+            animator.SetBool("Dead", true);
             Destroy(gameObject);
             Time.timeScale = 0f;
 

@@ -12,16 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 1dda979d7a350b14d86138cd36e5e6bf
   - enabled: 1
+    path: Assets/Scenes/Select Screens.unity
+    guid: 00a679299ce1b3b4689d9a8dcf2d9015
+  - enabled: 1
     path: Assets/Scenes/Sky City.unity
     guid: 3894c13bead5a114b926bc4046732a4d
   - enabled: 1
     path: Assets/Scenes/Blu Island.unity
     guid: 4e342f483ab79ba46aa549b53adbe7b7
-  - enabled: 1
-    path: Assets/Scenes/Test Map.unity
-    guid: dd69842e15d30e4498922a940d9da7a0
-  - enabled: 1
-    path: Assets/Scenes/Select Screens.unity
-    guid: 00a679299ce1b3b4689d9a8dcf2d9015
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 17d58b2e683aaaf48afdaef241112e97, type: 2}

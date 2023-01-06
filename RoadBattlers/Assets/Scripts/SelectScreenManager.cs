@@ -54,6 +54,11 @@ public class SelectScreenManager : MonoBehaviour
         StartCoroutine(Munch());
     }
 
+    public void TerranceSelect()
+    {
+        StartCoroutine(Terrance());
+    }
+
     public void SkyCitySelect()
     {
         StartCoroutine(SkyCity());
