@@ -12,7 +12,6 @@ public class SelectScreenManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip buttonClick;
 
-    //private int player1SkinNumber, player2SkinNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +26,11 @@ public class SelectScreenManager : MonoBehaviour
         {
             playerSelectScreen.SetActive(false);
             mapSelectScreen.SetActive(true);
+        }
+
+        else    
+        {
+            return;
         }
     }
     public void AvocadoSelect()
@@ -72,53 +76,59 @@ public class SelectScreenManager : MonoBehaviour
     public IEnumerator Avocado()
     {
         audioSource.PlayOneShot(buttonClick);
+        yield return new WaitForSeconds(0.5f);
         playerOneSelected = true;
+        yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player1SkinNumber", 0);
-        //inputHandler.playerOneSelectedSkin = 1;
         yield return new WaitForSeconds(1);
     }
 
     public IEnumerator DaQuan()
     {
         audioSource.PlayOneShot(buttonClick);
+        yield return new WaitForSeconds(0.5f);
         playerOneSelected = true;
+        yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player1SkinNumber", 1);
-        //inputHandler.playerOneSelectedSkin = 2;
         yield return new WaitForSeconds(1);
     }
 
     public IEnumerator Robot()
     {
         audioSource.PlayOneShot(buttonClick);
+        yield return new WaitForSeconds(0.5f);
         playerOneSelected = true;
+        yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player1SkinNumber", 2);
-        //inputHandler.playerOneSelectedSkin = 3;
         yield return new WaitForSeconds(1);
     }
 
     public IEnumerator BaseBall()
     {
         audioSource.PlayOneShot(buttonClick);
+        yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
+        yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player2SkinNumber", 3);
-        //inputHandler.playerTwoSelectedSkin = 4;
         yield return new WaitForSeconds(1);
     }
 
     public IEnumerator Munch()
     {
         audioSource.PlayOneShot(buttonClick);
+        yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
+        yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player2SkinNumber", 4);
-        //inputHandler.playerTwoSelectedSkin = 5;
         yield return new WaitForSeconds(1);
     }
     public IEnumerator Terrance()
     {
         audioSource.PlayOneShot(buttonClick);
+        yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
+        yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player2SkinNumber", 5);
-        //inputHandler.playerTwoSelectedSkin = 6;
         yield return new WaitForSeconds(1);
     }
 

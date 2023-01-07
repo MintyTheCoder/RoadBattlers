@@ -87,7 +87,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1612870671}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -175,7 +175,6 @@ GameObject:
   - component: {fileID: 2342925268009374602}
   - component: {fileID: 2342925268009374605}
   - component: {fileID: 7896956190437685614}
-  - component: {fileID: 645729564347272567}
   - component: {fileID: 4443399855492939414}
   - component: {fileID: 7628779033978516285}
   m_Layer: 7
@@ -275,35 +274,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &645729564347272567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2342925268009374604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d13a021780d3d4809bb95d46562df508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: 3
-  jumpPower: 5
-  shotOffSetRight: {fileID: 0}
-  shotOffSetLeft: {fileID: 0}
-  animator: {fileID: 7896956190437685614}
-  groundCheck: {fileID: 645729565356224350}
-  groundCheckRadius: 0.1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  projectileLeftPrefab: {fileID: 845485211546344522, guid: 64a0bf5c1ef5cbf4abc959f54a2c1db7, type: 3}
-  projectileRightPrefab: {fileID: 5022128463713865049, guid: 2fb9f34e63ed9ff41968e5f986857895, type: 3}
-  horizontalInput: {x: 0, y: 0}
-  isFacingRight: 0
-  canShoot: 1
-  lives: 3
-  health: 100
 --- !u!61 &4443399855492939414
 BoxCollider2D:
   m_ObjectHideFlags: 0

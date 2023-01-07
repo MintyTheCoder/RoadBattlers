@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6667355774340755033}
   - component: {fileID: 6667355774340755038}
   - component: {fileID: 1266379074383283389}
-  - component: {fileID: 8426970752336900260}
   - component: {fileID: 4732907717023957829}
   - component: {fileID: 1574664214075281134}
   m_Layer: 0
@@ -110,40 +109,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8426970752336900260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6667355774340755039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d13a021780d3d4809bb95d46562df508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerSpeed: 3
-  jumpPower: 5
-  shotOffSetRight: {fileID: 0}
-  shotOffSetLeft: {fileID: 0}
-  punchLeft: {fileID: 0}
-  punchRight: {fileID: 0}
-  bombLeft: {fileID: 0}
-  bombRight: {fileID: 0}
-  animator: {fileID: 1266379074383283389}
-  playerPos: {x: 0, y: 0}
-  groundCheck: {fileID: 8426970751273325197}
-  groundCheckRadius: 0.1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  projectileLeftPrefab: {fileID: 845485211546344522, guid: 0e34ebd703ada754b843f09eb0a0f8b1, type: 3}
-  projectileRightPrefab: {fileID: 5022128463713865049, guid: 2fcbeabcabeeb5c4a8ec1c95a806008f, type: 3}
-  horizontalInput: {x: 0, y: 0}
-  isFacingRight: 0
-  canAttack: 1
-  specialAllowed: 0
-  health: 100
 --- !u!61 &4732907717023957829
 BoxCollider2D:
   m_ObjectHideFlags: 0
