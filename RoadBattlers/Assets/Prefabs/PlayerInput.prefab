@@ -786,7 +786,7 @@ MonoBehaviour:
   - {fileID: 2915422701534184149, guid: a3ae68d36dcea754ba91cafbb0abd21d, type: 3}
   - {fileID: 2915422701534184149, guid: 7513804cc3a4c2f4682b727584e2e160, type: 3}
   - {fileID: 2915422701534184149, guid: 85c7e4f317b017a4cb0b67af0c9dc170, type: 3}
-  - {fileID: 0}
+  - {fileID: 2915422701534184149, guid: 57db2259b681a6b49a2c65094aff38aa, type: 3}
   spawnPoint: {x: 0, y: 0}
   playerOneSelectedSkin: 0
   playerTwoSelectedSkin: 0

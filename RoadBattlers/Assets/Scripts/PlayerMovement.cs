@@ -51,6 +51,7 @@ public class PlayerMovement: MonoBehaviour
     {
         yield return new WaitForSeconds(200);
         specialAllowed = true;
+        //StartCoroutine(SpecialTimer());
     }
     public void OnMove(InputAction.CallbackContext inputValue)
     {
@@ -179,8 +180,13 @@ public class PlayerMovement: MonoBehaviour
         if (health <= 0)
         {
             lives = lives - 1;
-            transform.position = respawnPoint;
+            
             health = 100;
+
+            if (lives >= 1)
+            {
+                transform.position = respawnPoint;
+            }
         }
 
         //determines game over using lives

@@ -41,9 +41,10 @@ public class ButtonManager : MonoBehaviour
         audioSource.PlayOneShot(buttonClick);
         //wait a few seconds before switching to the next scene
         yield return new WaitForSeconds(.5f);
-
+        Debug.Log("Start Button Pressed");
         //load the next scene
         SceneManager.LoadScene("Select Screens");
+        
     }
 
     public IEnumerator Quit()
