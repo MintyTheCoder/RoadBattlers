@@ -18,7 +18,6 @@ public class PlayerMovement: MonoBehaviour
     public Animator animator;
 
     private Vector2 respawnPoint = new Vector2(0, 2);
-    public Vector2 playerPos;
     //private Vector2 moveDirection;
 
     public Transform groundCheck;
@@ -31,8 +30,8 @@ public class PlayerMovement: MonoBehaviour
 
     public Vector2 horizontalInput;
     public bool isFacingRight;
-    public bool canAttack = true;
-    public bool specialAllowed = false;
+    bool canAttack = true;
+    bool specialAllowed = false;
 
     private int lives = 3;
 
@@ -42,34 +41,34 @@ public class PlayerMovement: MonoBehaviour
     {
         renderer = GetComponent<SpriteRenderer>();
         playerRigidbody = GetComponent<Rigidbody2D>();
-
-        //StartCoroutine(SpecialTimer());
-        
+        StartCoroutine(SpecialTimer());
     }
 
     public IEnumerator SpecialTimer()
     {
         yield return new WaitForSeconds(200);
         specialAllowed = true;
-        //StartCoroutine(SpecialTimer());
+        StartCoroutine(SpecialTimer());
     }
+
     public void OnMove(InputAction.CallbackContext inputValue)
     {
         horizontalInput = inputValue.ReadValue<Vector2>();
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput.x));
         playerRigidbody.velocity = new Vector2(horizontalInput.x * playerSpeed, playerRigidbody.velocity.y);
+
         if (horizontalInput.x > 0)
         {
             isFacingRight = true;
             renderer.flipX = false;
         }
+
         else if (horizontalInput.x < 0)
         {
             isFacingRight = false;
             renderer.flipX = true;
         }
 
-        
     }
 
     public void OnJump()
@@ -175,7 +174,6 @@ public class PlayerMovement: MonoBehaviour
         // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
 
         // MovePlayer();
-        playerPos = transform.position;
 
         if (health <= 0)
         {
@@ -203,7 +201,6 @@ public class PlayerMovement: MonoBehaviour
             }
         }
 
-
     }
     //private void MovePlayer()
     //{
@@ -217,7 +214,6 @@ public class PlayerMovement: MonoBehaviour
         if (other.tag == "Projectile")
         {
             health = health - 5;
-            
         }
 
         else if (other.tag == "Punch")
@@ -235,7 +231,6 @@ public class PlayerMovement: MonoBehaviour
             lives = lives - 1;
             Debug.Log("life lost");
             transform.position = respawnPoint;
-            
         }
     }
 }
