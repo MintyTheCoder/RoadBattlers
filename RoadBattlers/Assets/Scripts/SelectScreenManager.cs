@@ -22,6 +22,9 @@ public class SelectScreenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(PlayerPrefs.GetInt("player1SkinNumber"));
+        Debug.Log(PlayerPrefs.GetInt("player2SkinNumber"));
+        
         if (playerOneSelected && playerTwoSelected == true)
         {
             playerSelectScreen.SetActive(false);
@@ -32,6 +35,8 @@ public class SelectScreenManager : MonoBehaviour
         {
             return;
         }
+
+        
     }
     public void AvocadoSelect()
     {
@@ -76,9 +81,9 @@ public class SelectScreenManager : MonoBehaviour
     public IEnumerator Avocado()
     {
         audioSource.PlayOneShot(buttonClick);
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         playerOneSelected = true;
-        yield return new WaitForSeconds(0.5f);
+        //  qyield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player1SkinNumber", 0);
         yield return new WaitForSeconds(1);
     }
@@ -86,9 +91,9 @@ public class SelectScreenManager : MonoBehaviour
     public IEnumerator DaQuan()
     {
         audioSource.PlayOneShot(buttonClick);
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         playerOneSelected = true;
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player1SkinNumber", 1);
         yield return new WaitForSeconds(1);
     }
@@ -96,9 +101,9 @@ public class SelectScreenManager : MonoBehaviour
     public IEnumerator Robot()
     {
         audioSource.PlayOneShot(buttonClick);
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         playerOneSelected = true;
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player1SkinNumber", 2);
         yield return new WaitForSeconds(1);
     }
@@ -106,9 +111,9 @@ public class SelectScreenManager : MonoBehaviour
     public IEnumerator BaseBall()
     {
         audioSource.PlayOneShot(buttonClick);
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player2SkinNumber", 3);
         yield return new WaitForSeconds(1);
     }
@@ -116,18 +121,18 @@ public class SelectScreenManager : MonoBehaviour
     public IEnumerator Munch()
     {
         audioSource.PlayOneShot(buttonClick);
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player2SkinNumber", 4);
         yield return new WaitForSeconds(1);
     }
     public IEnumerator Terrance()
     {
         audioSource.PlayOneShot(buttonClick);
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player2SkinNumber", 5);
         yield return new WaitForSeconds(1);
     }

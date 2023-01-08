@@ -43,7 +43,7 @@ public class PlayerMovement: MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
         playerRigidbody = GetComponent<Rigidbody2D>();
 
-        StartCoroutine(SpecialTimer());
+        //StartCoroutine(SpecialTimer());
         
     }
 
@@ -217,6 +217,7 @@ public class PlayerMovement: MonoBehaviour
         if (other.tag == "Projectile")
         {
             health = health - 5;
+            
         }
 
         else if (other.tag == "Punch")

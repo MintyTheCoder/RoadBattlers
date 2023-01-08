@@ -15,7 +15,7 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 spawnPoint;
 
     
-    public int playerOneSelectedSkin, playerTwoSelectedSkin;
+    //public int playerOneSelectedSkin, playerTwoSelectedSkin;
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip spawnNoise;
@@ -25,10 +25,10 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Awake()
     {
-        playerOneSelectedSkin = PlayerPrefs.GetInt("player1SkinNumber");
-        Debug.Log(playerOneSelectedSkin);
-        playerTwoSelectedSkin = PlayerPrefs.GetInt("player2SkinNumber");
-        Debug.Log(playerTwoSelectedSkin);
+        //playerOneSelectedSkin = PlayerPrefs.GetInt("player1SkinNumber");
+        
+        //playerTwoSelectedSkin = PlayerPrefs.GetInt("player2SkinNumber");
+        
         //get a spawn point from the game manager object
 
         if (handlerInstance == null)
@@ -36,7 +36,7 @@ public class PlayerInputHandler : MonoBehaviour
             spawnPoint = GameManager.gameManagerInstance.spawnPoints[0].transform.position;
             //make a player prefab in the game
             //and get access to the script on the player prefab
-            playerMovementScript = GameObject.Instantiate(characters[playerOneSelectedSkin], spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
+            playerMovementScript = GameObject.Instantiate(characters[PlayerPrefs.GetInt("player1SkinNumber")], spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
             playerMovementScript.isFacingRight = true;
             audioSource.PlayOneShot(spawnNoise);
 
@@ -52,7 +52,7 @@ public class PlayerInputHandler : MonoBehaviour
             spawnPoint = GameManager.gameManagerInstance.spawnPoints[1].transform.position;
             //make a player prefab in the game
             //and get access to the script on the player prefab
-            playerMovementScript = GameObject.Instantiate(characters[playerTwoSelectedSkin], spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
+            playerMovementScript = GameObject.Instantiate(characters[PlayerPrefs.GetInt("player2SkinNumber")], spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
             playerMovementScript.isFacingRight = false;
 
             audioSource.PlayOneShot(spawnNoise);
@@ -62,11 +62,6 @@ public class PlayerInputHandler : MonoBehaviour
             Debug.Log("Loop 2");
         }
 
-    }
-
-    private void Update()
-    {
-        
     }
 
     //get the event from the gamepad

@@ -83,13 +83,6 @@ public class GameManager : MonoBehaviour
 
     }*/
 
-    private void Update()
-    {
-        
-
-
-       
-    }
     void JoinAction(InputAction.CallbackContext context)
     {
         PlayerInputManager.instance.JoinPlayerFromActionIfNotAlreadyJoined(context);
