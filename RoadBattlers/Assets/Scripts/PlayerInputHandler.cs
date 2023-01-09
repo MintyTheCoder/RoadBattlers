@@ -62,6 +62,11 @@ public class PlayerInputHandler : MonoBehaviour
             Debug.Log("Loop 2");
         }
 
+        else
+        {
+            return;
+        }
+
     }
 
     //get the event from the gamepad

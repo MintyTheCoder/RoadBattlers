@@ -9,7 +9,7 @@ public class PlayerMovement: MonoBehaviour
     [SerializeField] private float jumpPower = 5.0f;
     public GameObject shotOffSetRight, shotOffSetLeft;
 
-    public GameObject punchLeft, punchRight;
+    //public GameObject punchLeft, punchRight;
 
     public GameObject bombLeft, bombRight;
     private Rigidbody2D playerRigidbody;
@@ -69,6 +69,11 @@ public class PlayerMovement: MonoBehaviour
             renderer.flipX = true;
         }
 
+        else
+        {
+            return;
+        }
+
     }
 
     public void OnJump()
@@ -116,12 +121,17 @@ public class PlayerMovement: MonoBehaviour
 
         if (isFacingRight && canAttack == true)
         {
-            Instantiate(punchRight, shotOffSetRight.transform.position, Quaternion.identity);
+            //Instantiate(punchRight, shotOffSetRight.transform.position, Quaternion.identity);
         }
 
         else if (!isFacingRight && canAttack == true)
         {
-            Instantiate(punchLeft, shotOffSetLeft.transform.position, Quaternion.identity);
+            //Instantiate(punchLeft, shotOffSetLeft.transform.position, Quaternion.identity);
+        }
+
+        else
+        {
+            return;
         }
 
         canAttack = false;
@@ -130,8 +140,6 @@ public class PlayerMovement: MonoBehaviour
 
     public void OnSpecial()
     {
-
-
         if (specialAllowed)
         {
             Debug.Log("Special!!");
@@ -146,8 +154,18 @@ public class PlayerMovement: MonoBehaviour
                 Instantiate(bombLeft, shotOffSetLeft.transform.position, Quaternion.identity);
             }
 
+            else
+            {
+                return;
+            }
+
             canAttack = false;
             StartCoroutine(DelayPress());
+        }
+
+        else
+        {
+            return;
         }
     }
 
@@ -185,6 +203,16 @@ public class PlayerMovement: MonoBehaviour
             {
                 transform.position = respawnPoint;
             }
+
+            else
+            {
+                return;
+            }
+        }
+
+        else
+        {
+            return;
         }
 
         //determines game over using lives
@@ -195,10 +223,15 @@ public class PlayerMovement: MonoBehaviour
             Destroy(gameObject);
             Time.timeScale = 0f;
 
-            if (gameObject.tag == "player1")
+            /*if (gameObject.tag == "player1")
             {
 
-            }
+            }*/
+        }
+
+        else
+        {
+            return;
         }
 
     }
@@ -231,6 +264,11 @@ public class PlayerMovement: MonoBehaviour
             lives = lives - 1;
             Debug.Log("life lost");
             transform.position = respawnPoint;
+        }
+
+        else
+        {
+            return;
         }
     }
 }
