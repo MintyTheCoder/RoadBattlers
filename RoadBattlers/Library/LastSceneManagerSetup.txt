@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Select Screens.unity
+- path: Assets/Scenes/Sky City.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -42,6 +42,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        else
+        {
+            return;
+        }
+
         joinAction.Enable();
         joinAction.performed += context => JoinAction(context);
 
@@ -75,6 +80,11 @@ public class GameManager : MonoBehaviour
         if (PlayerJoinedGame != null)
         {
             PlayerJoinedGame(playerInput);
+        }
+
+        else
+        {
+            return;
         }
     }
 

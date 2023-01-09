@@ -31,50 +31,6 @@ Transform:
   m_Father: {fileID: 2915422701534184147}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1633541857785060481
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5146197414468518693}
-  - component: {fileID: 3135200726194523926}
-  m_Layer: 7
-  m_Name: PunchRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5146197414468518693
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633541857785060481}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2915422701534184147}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3135200726194523926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633541857785060481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34ec058b99dfcf54d818cb7f8c09a1e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2090958160447237079
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,8 +98,6 @@ Transform:
   - {fileID: 1710505479}
   - {fileID: 115601706713150544}
   - {fileID: 972434930414067681}
-  - {fileID: 1486374653913663345}
-  - {fileID: 5146197414468518693}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -235,12 +189,9 @@ MonoBehaviour:
   jumpPower: 5
   shotOffSetRight: {fileID: 2090958160447237079}
   shotOffSetLeft: {fileID: 3817970236049115707}
-  punchLeft: {fileID: 6007133384847613975}
-  punchRight: {fileID: 1633541857785060481}
   bombLeft: {fileID: 845485211546344522, guid: f2d2b77888c3aee438412dfc0355b332, type: 3}
   bombRight: {fileID: 5022128463713865049, guid: d9d10ce216d4db54daf8a75eb5079017, type: 3}
   animator: {fileID: -1918102095409551305}
-  playerPos: {x: 0, y: 0}
   groundCheck: {fileID: 1710505479}
   groundCheckRadius: 0.1
   groundLayer:
@@ -250,8 +201,6 @@ MonoBehaviour:
   projectileRightPrefab: {fileID: 5022128463713865049, guid: 2fb9f34e63ed9ff41968e5f986857895, type: 3}
   horizontalInput: {x: 0, y: 0}
   isFacingRight: 0
-  canAttack: 1
-  specialAllowed: 0
   health: 100
 --- !u!61 &3845008923113287631
 BoxCollider2D:
@@ -331,47 +280,3 @@ Transform:
   m_Father: {fileID: 2915422701534184147}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6007133384847613975
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1486374653913663345}
-  - component: {fileID: 6788849638617398990}
-  m_Layer: 7
-  m_Name: PunchLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1486374653913663345
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6007133384847613975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2915422701534184147}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6788849638617398990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6007133384847613975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ead49894487074a4e808b50c5ddbacbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
