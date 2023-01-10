@@ -31,94 +31,6 @@ Transform:
   m_Father: {fileID: 2915422701534184147}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &374472743940246048
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2951870190250849309}
-  - component: {fileID: 8571714917823206265}
-  m_Layer: 7
-  m_Name: PunchLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2951870190250849309
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374472743940246048}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2915422701534184147}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8571714917823206265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374472743940246048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ead49894487074a4e808b50c5ddbacbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1806015379510434248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1329158268773419083}
-  - component: {fileID: 2847204779845206600}
-  m_Layer: 7
-  m_Name: PunchRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1329158268773419083
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806015379510434248}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2915422701534184147}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2847204779845206600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1806015379510434248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34ec058b99dfcf54d818cb7f8c09a1e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2915422701534184149
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,8 +67,6 @@ Transform:
   - {fileID: 1710505479}
   - {fileID: 141572428005278990}
   - {fileID: 3151225261095161889}
-  - {fileID: 2951870190250849309}
-  - {fileID: 1329158268773419083}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -248,12 +158,11 @@ MonoBehaviour:
   jumpPower: 5
   shotOffSetRight: {fileID: 8914308915890566725}
   shotOffSetLeft: {fileID: 9147234164354365262}
-  punchLeft: {fileID: 374472743940246048}
-  punchRight: {fileID: 1806015379510434248}
+  punchLeft: {fileID: 7282622033793818945, guid: 2f6c6475d35ffa24bb32ab69affc7bac, type: 3}
+  punchRight: {fileID: 3853869416380499638, guid: 141013de220e0e9408cef3929eb5d7a7, type: 3}
   bombLeft: {fileID: 845485211546344522, guid: f2d2b77888c3aee438412dfc0355b332, type: 3}
   bombRight: {fileID: 5022128463713865049, guid: d9d10ce216d4db54daf8a75eb5079017, type: 3}
   animator: {fileID: -1918102095409551305}
-  playerPos: {x: 0, y: 0}
   groundCheck: {fileID: 1710505479}
   groundCheckRadius: 0.1
   groundLayer:
@@ -263,8 +172,6 @@ MonoBehaviour:
   projectileRightPrefab: {fileID: 5022128463713865049, guid: f5a7d964eff26e44c9bafc124a9372c7, type: 3}
   horizontalInput: {x: 0, y: 0}
   isFacingRight: 0
-  canAttack: 1
-  specialAllowed: 0
   health: 100
 --- !u!61 &3845008923113287631
 BoxCollider2D:

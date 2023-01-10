@@ -5,8 +5,8 @@ using UnityEngine;
 public class PunchLeft : MonoBehaviour
 {
     //PlayerMovement playerMovement;
-    Vector2 playerPos;
-    Vector2 punchPos;
+    Vector2 spawnPos;
+    Vector2 currentPos;
     Transform transformParent;
 
     private float rightBound = 9.5f;
@@ -16,19 +16,22 @@ public class PunchLeft : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transformParent = GetComponentInParent<Transform>();
-        playerPos = transformParent.position;
-        punchPos = gameObject.transform.position;
+        //transformParent = GetComponentInParent<Transform>();
+        spawnPos = gameObject.transform.position;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        currentPos = gameObject.transform.position;
+
         transform.Translate(Vector2.left * speed * Time.deltaTime);
 
-        if (punchPos.x < playerPos.x -1)
+        if (currentPos.x < spawnPos.x -1)
         {
+            Debug.Log(spawnPos);
+            Debug.Log("Hoarray!");
             Destroy(gameObject);
         }
 
@@ -50,4 +53,5 @@ public class PunchLeft : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

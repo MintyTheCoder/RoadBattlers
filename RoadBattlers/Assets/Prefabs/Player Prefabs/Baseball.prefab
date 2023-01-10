@@ -31,50 +31,6 @@ Transform:
   m_Father: {fileID: 2915422701534184147}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &638362267071742136
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8737133945340759306}
-  - component: {fileID: 8709865821672288690}
-  m_Layer: 7
-  m_Name: PunchLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8737133945340759306
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638362267071742136}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2915422701534184147}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8709865821672288690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638362267071742136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ead49894487074a4e808b50c5ddbacbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &641026637650747039
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,50 +93,6 @@ Transform:
   m_Father: {fileID: 2915422701534184147}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1973276688212443530
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7596154154971255627}
-  - component: {fileID: 4225544457769994884}
-  m_Layer: 7
-  m_Name: PunchRight
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7596154154971255627
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973276688212443530}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2915422701534184147}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4225544457769994884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973276688212443530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34ec058b99dfcf54d818cb7f8c09a1e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2915422701534184149
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,8 +129,6 @@ Transform:
   - {fileID: 1710505479}
   - {fileID: 2100420542754978564}
   - {fileID: 593357720017814123}
-  - {fileID: 8737133945340759306}
-  - {fileID: 7596154154971255627}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -310,12 +220,11 @@ MonoBehaviour:
   jumpPower: 5
   shotOffSetRight: {fileID: 641026637650747039}
   shotOffSetLeft: {fileID: 1201968234311524495}
-  punchLeft: {fileID: 638362267071742136}
-  punchRight: {fileID: 1973276688212443530}
+  punchLeft: {fileID: 7282622033793818945, guid: 2f6c6475d35ffa24bb32ab69affc7bac, type: 3}
+  punchRight: {fileID: 3853869416380499638, guid: 141013de220e0e9408cef3929eb5d7a7, type: 3}
   bombLeft: {fileID: 845485211546344522, guid: f2d2b77888c3aee438412dfc0355b332, type: 3}
   bombRight: {fileID: 5022128463713865049, guid: d9d10ce216d4db54daf8a75eb5079017, type: 3}
   animator: {fileID: -1918102095409551305}
-  playerPos: {x: 0, y: 0}
   groundCheck: {fileID: 1710505479}
   groundCheckRadius: 0.1
   groundLayer:
@@ -325,8 +234,6 @@ MonoBehaviour:
   projectileRightPrefab: {fileID: 5022128463713865049, guid: 2fb9f34e63ed9ff41968e5f986857895, type: 3}
   horizontalInput: {x: 0, y: 0}
   isFacingRight: 0
-  canAttack: 1
-  specialAllowed: 0
   health: 100
 --- !u!61 &3845008923113287631
 BoxCollider2D:

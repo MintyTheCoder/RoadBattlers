@@ -9,7 +9,7 @@ public class PlayerMovement: MonoBehaviour
     [SerializeField] private float jumpPower = 5.0f;
     public GameObject shotOffSetRight, shotOffSetLeft;
 
-    //public GameObject punchLeft, punchRight;
+    public GameObject punchLeft, punchRight;
 
     public GameObject bombLeft, bombRight;
     private Rigidbody2D playerRigidbody;
@@ -117,21 +117,16 @@ public class PlayerMovement: MonoBehaviour
 
     public void OnPunch()
     {
-        Debug.Log("Punch!");
+        //Debug.Log("Punch!");
 
         if (isFacingRight && canAttack == true)
         {
-            //Instantiate(punchRight, shotOffSetRight.transform.position, Quaternion.identity);
+            Instantiate(punchRight, shotOffSetRight.transform.position, Quaternion.identity);
         }
 
         else if (!isFacingRight && canAttack == true)
         {
-            //Instantiate(punchLeft, shotOffSetLeft.transform.position, Quaternion.identity);
-        }
-
-        else
-        {
-            return;
+            Instantiate(punchLeft, shotOffSetLeft.transform.position, Quaternion.identity);
         }
 
         canAttack = false;
@@ -154,18 +149,8 @@ public class PlayerMovement: MonoBehaviour
                 Instantiate(bombLeft, shotOffSetLeft.transform.position, Quaternion.identity);
             }
 
-            else
-            {
-                return;
-            }
-
             canAttack = false;
             StartCoroutine(DelayPress());
-        }
-
-        else
-        {
-            return;
         }
     }
 
@@ -179,15 +164,6 @@ public class PlayerMovement: MonoBehaviour
 
     private void Update()
     {
-        while (renderer.flipX)
-        {
-            isFacingRight = false;
-        }
-
-        while (!renderer.flipX)
-        {
-            isFacingRight = true;
-        }
 
         // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
 
@@ -203,16 +179,6 @@ public class PlayerMovement: MonoBehaviour
             {
                 transform.position = respawnPoint;
             }
-
-            else
-            {
-                return;
-            }
-        }
-
-        else
-        {
-            return;
         }
 
         //determines game over using lives
@@ -227,11 +193,6 @@ public class PlayerMovement: MonoBehaviour
             {
 
             }*/
-        }
-
-        else
-        {
-            return;
         }
 
     }
@@ -264,11 +225,6 @@ public class PlayerMovement: MonoBehaviour
             lives = lives - 1;
             Debug.Log("life lost");
             transform.position = respawnPoint;
-        }
-
-        else
-        {
-            return;
         }
     }
 }

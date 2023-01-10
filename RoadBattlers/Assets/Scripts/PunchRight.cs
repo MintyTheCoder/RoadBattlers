@@ -5,10 +5,9 @@ using UnityEngine;
 public class PunchRight : MonoBehaviour
 {
     //PlayerMovement playerMovement;
-    Vector2 playerPos;
-    Vector2 punchPos;
+    Vector2 spawnPos;
+    Vector2 currentPos;
     Transform transformParent;
-
 
     private float rightBound = 9.5f;
     private float leftBound = -9.5f;
@@ -17,18 +16,22 @@ public class PunchRight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transformParent = GetComponentInParent<Transform>();
-        playerPos = transformParent.position;
-        punchPos = gameObject.transform.position;
+        //transformParent = GetComponentInParent<Transform>();
+        spawnPos = gameObject.transform.position;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        currentPos = gameObject.transform.position;
 
-        if (punchPos.x > playerPos.x +1)
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
+
+        if (currentPos.x > spawnPos.x +1)
         {
+            Debug.Log(spawnPos);
+            Debug.Log("Hoarray!");
             Destroy(gameObject);
         }
 
@@ -42,6 +45,7 @@ public class PunchRight : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player 1" || collision.tag == "Player 2")
