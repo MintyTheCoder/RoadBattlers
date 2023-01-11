@@ -114,7 +114,7 @@ public class SelectScreenManager : MonoBehaviour
         //yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
         //yield return new WaitForSeconds(0.5f);
-        PlayerPrefs.SetInt("player2SkinNumber", 3);
+        PlayerPrefs.SetInt("player2SkinNumber", 0);
         yield return new WaitForSeconds(1);
     }
 
@@ -124,7 +124,7 @@ public class SelectScreenManager : MonoBehaviour
         //yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
         //yield return new WaitForSeconds(0.5f);
-        PlayerPrefs.SetInt("player2SkinNumber", 4);
+        PlayerPrefs.SetInt("player2SkinNumber", 1);
         yield return new WaitForSeconds(1);
     }
     public IEnumerator Terrance()
@@ -133,7 +133,7 @@ public class SelectScreenManager : MonoBehaviour
         //yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
         //yield return new WaitForSeconds(0.5f);
-        PlayerPrefs.SetInt("player2SkinNumber", 5);
+        PlayerPrefs.SetInt("player2SkinNumber", 2);
         yield return new WaitForSeconds(1);
     }
 

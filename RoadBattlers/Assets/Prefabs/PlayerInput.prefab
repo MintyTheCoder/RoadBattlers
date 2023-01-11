@@ -780,12 +780,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0663e0cf1c542a2965b4eaa9678c39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characters:
+  charactersOne:
   - {fileID: 2915422701534184149, guid: 03b63ffde50c7924fbeb232d9b7d4aef, type: 3}
-  - {fileID: 2915422701534184149, guid: 7513804cc3a4c2f4682b727584e2e160, type: 3}
   - {fileID: 2915422701534184149, guid: b7e4fdff6374dc344abe291cacccfaa5, type: 3}
-  - {fileID: 2915422701534184149, guid: 85c7e4f317b017a4cb0b67af0c9dc170, type: 3}
   - {fileID: 2915422701534184149, guid: a3ae68d36dcea754ba91cafbb0abd21d, type: 3}
+  charactersTwo:
+  - {fileID: 2915422701534184149, guid: 7513804cc3a4c2f4682b727584e2e160, type: 3}
+  - {fileID: 2915422701534184149, guid: 85c7e4f317b017a4cb0b67af0c9dc170, type: 3}
   - {fileID: 2915422701534184149, guid: 57db2259b681a6b49a2c65094aff38aa, type: 3}
   spawnPoint: {x: 0, y: 0}
   audioSource: {fileID: -7267882920293624489}

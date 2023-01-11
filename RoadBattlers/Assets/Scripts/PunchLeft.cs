@@ -31,7 +31,7 @@ public class PunchLeft : MonoBehaviour
         if (currentPos.x < spawnPos.x -1)
         {
             Debug.Log(spawnPos);
-            Debug.Log("Hoarray!");
+            Debug.Log("Punch Destroyed!");
             Destroy(gameObject);
         }
 
@@ -48,7 +48,7 @@ public class PunchLeft : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player 1" || collision.tag == "Player 2")
+        if (collision.tag == "PlayerOne" || collision.tag == "PlayerOne")
         {
             Destroy(gameObject);
         }

@@ -26,12 +26,12 @@ public class PunchRight : MonoBehaviour
     {
         currentPos = gameObject.transform.position;
 
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
 
         if (currentPos.x > spawnPos.x +1)
         {
             Debug.Log(spawnPos);
-            Debug.Log("Hoarray!");
+            Debug.Log("Punch Destroyed!");
             Destroy(gameObject);
         }
 

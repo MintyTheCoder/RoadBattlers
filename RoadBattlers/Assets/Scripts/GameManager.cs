@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     //public GameObject pauseMenuUI;
 
-    public GameObject player1;
-    public GameObject player2;
+    //public GameObject player1;
+    //public GameObject player2;
     // Instances of the Game Manager
     public static GameManager gameManagerInstance = null;
 

@@ -36,7 +36,7 @@ public class ProjectileMoveLeft : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player 1" || collision.tag == "Player 2")
+        if (collision.tag == "PlayerOne" || collision.tag == "PlayerTwo")
         {
             Destroy(gameObject);
         }

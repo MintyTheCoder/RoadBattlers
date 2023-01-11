@@ -167,9 +167,9 @@ GameObject:
   - component: {fileID: 6743067742085866387}
   - component: {fileID: 6743067742085866390}
   - component: {fileID: 6743067742085866385}
-  - component: {fileID: 6743067742346815488}
+  - component: {fileID: 1301793299}
   m_Layer: 0
-  m_Name: Unit B Button
+  m_Name: Terrance Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 865, y: 450}
+  m_AnchoredPosition: {x: 2990, y: 450}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6743067742085866390
@@ -243,7 +243,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 6743067742346815488}
+  m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -259,7 +259,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6743067742346815488
+--- !u!114 &1301793299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

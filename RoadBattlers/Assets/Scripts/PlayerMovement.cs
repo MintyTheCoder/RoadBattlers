@@ -11,6 +11,8 @@ public class PlayerMovement: MonoBehaviour
 
     public GameObject punchLeft, punchRight;
 
+    GameObject player1, player2;
+
     public GameObject bombLeft, bombRight;
     private Rigidbody2D playerRigidbody;
     private SpriteRenderer renderer;
@@ -104,33 +106,36 @@ public class PlayerMovement: MonoBehaviour
         if (isFacingRight && canAttack == true)
         {
             Instantiate(projectileRightPrefab, shotOffSetRight.transform.position, Quaternion.identity);
+            StartCoroutine(DelayPress());
         }
 
         else if (!isFacingRight && canAttack == true)
         {
             Instantiate(projectileLeftPrefab, shotOffSetLeft.transform.position, Quaternion.identity);
+            StartCoroutine(DelayPress());
         }
 
         canAttack = false;
-        StartCoroutine(DelayPress());
     }
 
     public void OnPunch()
     {
-        //Debug.Log("Punch!");
+        Debug.Log("Punch!");
 
         if (isFacingRight && canAttack == true)
         {
             Instantiate(punchRight, shotOffSetRight.transform.position, Quaternion.identity);
+            StartCoroutine(DelayPress());
         }
 
         else if (!isFacingRight && canAttack == true)
         {
             Instantiate(punchLeft, shotOffSetLeft.transform.position, Quaternion.identity);
+            StartCoroutine(DelayPress());
         }
 
         canAttack = false;
-        StartCoroutine(DelayPress());
+        
     }
 
     public void OnSpecial()
@@ -142,15 +147,16 @@ public class PlayerMovement: MonoBehaviour
             if (isFacingRight && canAttack == true)
             {
                 Instantiate(bombRight, shotOffSetRight.transform.position, Quaternion.identity);
+                StartCoroutine(DelayPress());
             }
 
             else if (!isFacingRight && canAttack == true)
             {
                 Instantiate(bombLeft, shotOffSetLeft.transform.position, Quaternion.identity);
+                StartCoroutine(DelayPress());
             }
 
             canAttack = false;
-            StartCoroutine(DelayPress());
         }
     }
 
@@ -164,7 +170,8 @@ public class PlayerMovement: MonoBehaviour
 
     private void Update()
     {
-
+        player1 = GameObject.FindGameObjectWithTag("playerOne");
+        player2 = GameObject.FindGameObjectWithTag("playerTwo");
         // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
 
         // MovePlayer();
@@ -189,10 +196,15 @@ public class PlayerMovement: MonoBehaviour
             Destroy(gameObject);
             Time.timeScale = 0f;
 
-            /*if (gameObject.tag == "player1")
+            if (gameObject.tag == "playerOne")
             {
+                player2.transform.position = new Vector2(0,0);
+            }
 
-            }*/
+            else if (gameObject.tag == "playerTwo")
+            {
+                player1.transform.position = new Vector2(0,0);
+            }
         }
 
     }
@@ -208,16 +220,19 @@ public class PlayerMovement: MonoBehaviour
         if (other.tag == "Projectile")
         {
             health = health - 5;
+            Debug.Log(health);
         }
 
         else if (other.tag == "Punch")
         {
             health = health - 10;
+            Debug.Log(health);
         }
 
         else if (other.tag == "Bomb")
         {
             health = health - 40;
+            Debug.Log(health);
         }
 
         else if (other.tag == "DeathBox")

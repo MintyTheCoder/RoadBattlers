@@ -9,7 +9,7 @@ public class PlayerInputHandler : MonoBehaviour
     //public GameObject player1Skin;
     //public GameObject player2Skin;
 
-    public GameObject[] characters = new GameObject[6];
+    public GameObject[] charactersOne, charactersTwo = new GameObject[3];
 
     PlayerMovement playerMovementScript; //on each player
     public Vector2 spawnPoint;
@@ -36,7 +36,7 @@ public class PlayerInputHandler : MonoBehaviour
             spawnPoint = GameManager.gameManagerInstance.spawnPoints[0].transform.position;
             //make a player prefab in the game
             //and get access to the script on the player prefab
-            playerMovementScript = GameObject.Instantiate(characters[PlayerPrefs.GetInt("player1SkinNumber")], spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
+            playerMovementScript = GameObject.Instantiate(charactersOne[PlayerPrefs.GetInt("player1SkinNumber")], spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
             playerMovementScript.isFacingRight = true;
             audioSource.PlayOneShot(spawnNoise);
 
@@ -52,7 +52,7 @@ public class PlayerInputHandler : MonoBehaviour
             spawnPoint = GameManager.gameManagerInstance.spawnPoints[1].transform.position;
             //make a player prefab in the game
             //and get access to the script on the player prefab
-            playerMovementScript = GameObject.Instantiate(characters[PlayerPrefs.GetInt("player2SkinNumber")], spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
+            playerMovementScript = GameObject.Instantiate(charactersTwo[PlayerPrefs.GetInt("player2SkinNumber")], spawnPoint, transform.rotation).GetComponent<PlayerMovement>();
             playerMovementScript.isFacingRight = false;
 
             audioSource.PlayOneShot(spawnNoise);
@@ -60,11 +60,6 @@ public class PlayerInputHandler : MonoBehaviour
             transform.parent = playerMovementScript.transform;
             transform.position = playerMovementScript.transform.position;
             Debug.Log("Loop 2");
-        }
-
-        else
-        {
-            return;
         }
 
     }
