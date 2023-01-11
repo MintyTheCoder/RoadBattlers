@@ -713,6 +713,7 @@ MonoBehaviour:
   currentScene: 0
   audioSource: {fileID: 1074254341}
   buttonClick: {fileID: 8300000, guid: ad30863a6790d664cb9b518d366d1f4e, type: 3}
+  pauseMenuUI: {fileID: 0}
 --- !u!4 &1074254343
 Transform:
   m_ObjectHideFlags: 0

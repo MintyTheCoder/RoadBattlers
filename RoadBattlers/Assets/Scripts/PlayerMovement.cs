@@ -100,7 +100,7 @@ public class PlayerMovement: MonoBehaviour
     public void OnThrow()
     {
         Debug.Log("Throw!");
-
+        animator.SetBool("isThrow", true);
         if (isFacingRight && canAttack == true)
         {
             Instantiate(projectileRightPrefab, shotOffSetRight.transform.position, Quaternion.identity);
@@ -112,13 +112,18 @@ public class PlayerMovement: MonoBehaviour
         }
 
         canAttack = false;
+        StartCoroutine(DelayThrow());
         StartCoroutine(DelayPress());
     }
-
+    public IEnumerator DelayThrow()
+    {
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("isThrow", false);
+    }
     public void OnPunch()
     {
         //Debug.Log("Punch!");
-
+        animator.SetBool("isPunch", true);
         if (isFacingRight && canAttack == true)
         {
             Instantiate(punchRight, shotOffSetRight.transform.position, Quaternion.identity);
@@ -130,7 +135,15 @@ public class PlayerMovement: MonoBehaviour
         }
 
         canAttack = false;
+        //IEnumerator to delay animations
+        StartCoroutine(PunchDelay());
+        
         StartCoroutine(DelayPress());
+    }
+    public IEnumerator PunchDelay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("isPunch", false);
     }
 
     public void OnSpecial()
