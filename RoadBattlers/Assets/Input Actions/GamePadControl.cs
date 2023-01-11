@@ -129,6 +129,17 @@ public partial class @GamePadControl : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""fa0f4b31-d00f-43f8-8619-49a5210805a7"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a65a8b20-2bf6-4e81-932d-de9f6325be68"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
