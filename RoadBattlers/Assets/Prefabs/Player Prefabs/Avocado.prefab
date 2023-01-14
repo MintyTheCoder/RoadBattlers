@@ -405,7 +405,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 1708714768, guid: c9a67ef80e017b245b4435fc5e6f33f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -457,6 +457,8 @@ MonoBehaviour:
   punchRight: {fileID: 3853869416380499638, guid: 141013de220e0e9408cef3929eb5d7a7, type: 3}
   bombLeft: {fileID: 845485211546344522, guid: f2d2b77888c3aee438412dfc0355b332, type: 3}
   bombRight: {fileID: 5022128463713865049, guid: d9d10ce216d4db54daf8a75eb5079017, type: 3}
+  playerOneWinUI: {fileID: 1509412103262626001, guid: cd93ab5d988c38c4ab3691df87ef5b4d, type: 3}
+  playerTwoWinUI: {fileID: 5657613665686675884, guid: 6b46a3b69508ab24f993013bdc42344b, type: 3}
   animator: {fileID: -1918102095409551305}
   lifeAnim: {fileID: 7541458111204481334}
   groundCheck: {fileID: 1710505479}
@@ -468,6 +470,7 @@ MonoBehaviour:
   projectileRightPrefab: {fileID: 5022128463713865049, guid: 2fb9f34e63ed9ff41968e5f986857895, type: 3}
   horizontalInput: {x: 0, y: 0}
   isFacingRight: 0
+  lives: 3
   health: 100
   healthDisplay: {fileID: 587875927}
 --- !u!61 &3845008923113287631
@@ -643,7 +646,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lives
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6736154949144127973, guid: 501c469aa25a5f94591e9c7a76629a2d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 501c469aa25a5f94591e9c7a76629a2d, type: 3}
 --- !u!224 &4531354168864251305 stripped
 RectTransform:

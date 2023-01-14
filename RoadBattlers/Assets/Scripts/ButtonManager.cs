@@ -39,6 +39,10 @@ public class ButtonManager : MonoBehaviour
         StartCoroutine(MainMenu());
     }
 
+    public void Again()
+    {
+        StartCoroutine(PlayAgain());
+    }
     public IEnumerator SelectScreen()
     {
         //add for sound effect
@@ -70,6 +74,15 @@ public class ButtonManager : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene("Main Menu");
         
+    }
+
+    public IEnumerator PlayAgain()
+    {
+        //add for sound effect
+        audioSource.PlayOneShot(buttonClick);
+        //wait a few seconds before switching to the next scene
+        yield return new WaitForSeconds(.5f);
+        SceneManager.LoadScene("Select Screens");
     }
 
     public IEnumerator Resume()

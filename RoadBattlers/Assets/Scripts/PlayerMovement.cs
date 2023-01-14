@@ -17,7 +17,7 @@ public class PlayerMovement: MonoBehaviour
     public GameObject bombLeft, bombRight;
     private Rigidbody2D playerRigidbody;
     private SpriteRenderer spriteRenderer;
-
+    public GameObject playerOneWinUI, playerTwoWinUI;
     public Animator animator, lifeAnim;
 
     private Vector2 respawnPoint = new Vector2(0, 2);
@@ -39,10 +39,11 @@ public class PlayerMovement: MonoBehaviour
 
     public int health = 100;
     [SerializeField] Text healthDisplay;
+
+    
     
     private void Start()
     {
-        //lifeAnim = GetComponentInChildren<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerRigidbody = GetComponent<Rigidbody2D>();
         StartCoroutine(SpecialTimer());
@@ -50,6 +51,60 @@ public class PlayerMovement: MonoBehaviour
         lifeAnim.SetInteger("Lives", lives);
     }
 
+    private void Update()
+    {
+        lifeAnim.SetInteger("Lives", lives);
+        healthDisplay.text = "Health: " + health;
+        player1 = GameObject.FindGameObjectWithTag("PlayerOne");
+        player2 = GameObject.FindGameObjectWithTag("PlayerTwo");
+        // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
+
+        // MovePlayer();
+
+        if (health <= 0)
+        {
+            lives = lives - 1;
+            lifeAnim.SetInteger("Lives", lives);
+            health = 100;
+
+            if (lives >= 1)
+            {
+                transform.position = respawnPoint;
+
+            }
+        }
+
+        //determines game over using lives
+
+        if (lives == 0)
+        {
+            animator.SetBool("Dead", true);
+            lifeAnim.SetInteger("Lives", 0);
+
+            lives = lives - 1;
+
+            StartCoroutine(Delay());
+
+            if (gameObject.tag == "PlayerOne")
+            {
+                player2.transform.position = new Vector2(0, 0);
+                player2.transform.localScale = new Vector3(0.36f, 0.36f);
+                gameObject.transform.position = GameManager.gameManagerInstance.spawnPoints[0].transform.position;
+                Instantiate(playerTwoWinUI, new Vector2(0, 0), Quaternion.identity);
+            }
+
+            else if (gameObject.tag == "PlayerTwo")
+            {
+                player1.transform.position = new Vector2(0, 0);
+                player1.transform.localScale = new Vector3(0.36f, 0.36f);
+                gameObject.transform.position = GameManager.gameManagerInstance.spawnPoints[1].transform.position;
+                Instantiate(playerOneWinUI, new Vector2(0, 0), Quaternion.identity);
+            }
+
+
+        }
+
+    }
     public IEnumerator SpecialTimer()
     {
         yield return new WaitForSeconds(200);
@@ -172,59 +227,7 @@ public class PlayerMovement: MonoBehaviour
         canAttack = true;
     }
 
-    private void Update()
-    {
-        lifeAnim.SetInteger("Lives", lives);
-        healthDisplay.text = "Health: " + health;
-        player1 = GameObject.FindGameObjectWithTag("PlayerOne");
-        player2 = GameObject.FindGameObjectWithTag("PlayerTwo");
-        // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
-
-        // MovePlayer();
-
-        if (health <= 0)
-        {
-            lives = lives - 1;
-            lifeAnim.SetInteger("Lives", lives);
-            health = 100;
-
-            if (lives >= 1)
-            {
-                transform.position = respawnPoint;
-                
-            }
-        }
-
-        //determines game over using lives
-
-        if (lives == 0)
-        {
-            animator.SetBool("Dead", true);
-            lifeAnim.SetInteger("Lives", 0);
-
-            Debug.Log(lifeAnim.GetInteger("Lives"));
-
-            lives = lives - 1;
-
-            //gameObject.transform.position = new Vector2(0,0);
-            StartCoroutine(Delay());
-
-            if (gameObject.tag == "PlayerOne")
-            {
-                //player2.transform.position = new Vector2(0,0);
-                gameObject.transform.position = GameManager.gameManagerInstance.spawnPoints[0].transform.position;
-            }
-
-            else if (gameObject.tag == "PlayerTwo")
-            {
-                //player1.transform.position = new Vector2(0,0);
-                gameObject.transform.position = GameManager.gameManagerInstance.spawnPoints[1].transform.position;
-            }
-            
-
-        }
-
-    }
+    
     //private void MovePlayer()
     //{
         //var horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -266,8 +269,8 @@ public class PlayerMovement: MonoBehaviour
 
     public IEnumerator Delay() 
     {
-        Debug.Log("Paused");
+        Debug.Log("Delayed");
         yield return new WaitForSeconds(0.5f);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 }

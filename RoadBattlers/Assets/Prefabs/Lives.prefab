@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 853822704246434934}
   - component: {fileID: 6742835940558039273}
   - component: {fileID: 8874522608651276146}
-  - component: {fileID: 6736154949144127973}
   m_Layer: 7
   m_Name: Lives
   m_TagString: Untagged
@@ -99,7 +98,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1834216311, guid: 15545bbefc364e146bf7dabf161db273, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -111,15 +110,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6736154949144127973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3932096453912091542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7248e946b3bbb94488e23bf0d585f44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
