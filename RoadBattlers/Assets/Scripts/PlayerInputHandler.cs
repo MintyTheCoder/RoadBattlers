@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -13,12 +15,12 @@ public class PlayerInputHandler : MonoBehaviour
 
     PlayerMovement playerMovementScript; //on each player
     public Vector2 spawnPoint;
+    public GameObject pauseMenuUI;
 
-    
     //public int playerOneSelectedSkin, playerTwoSelectedSkin;
 
     [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip spawnNoise;
+    [SerializeField] AudioClip spawnNoise, buttonClick;
     //SerializeField] AudioClip damageNoise;
 
     public static PlayerInputHandler handlerInstance;
@@ -97,5 +99,39 @@ public class PlayerInputHandler : MonoBehaviour
     {
         //send the command to the player movement script
         playerMovementScript.OnSpecial();
+    }
+
+    public void OnPause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void OnResume()
+    {
+        //add for sound effect
+        audioSource.PlayOneShot(buttonClick);
+        pauseMenuUI.SetActive(false);
+
+        Time.timeScale = 1;
+    }
+
+    public void GameMainMenu()
+    {
+        StartCoroutine(MainMenu());
+    }
+
+
+    public IEnumerator MainMenu()
+    {
+        //add for sound effect
+        audioSource.PlayOneShot(buttonClick);
+
+        //wait a few seconds before switching to the next scene
+        Time.timeScale = 1;
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Main Menu");
+        yield return "";
+
     }
 }

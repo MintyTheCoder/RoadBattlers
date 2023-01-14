@@ -12,6 +12,8 @@ public class ButtonManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip buttonClick;
 
+    PlayerInputHandler playerInputHandler;
+
     public GameObject pauseMenuUI;
 
     private void Start()
@@ -35,11 +37,6 @@ public class ButtonManager : MonoBehaviour
     public void Menu()
     {
         StartCoroutine(MainMenu());
-    }
-
-    public void ResumeGame()
-    {
-        StartCoroutine(Resume());
     }
 
     public IEnumerator SelectScreen()

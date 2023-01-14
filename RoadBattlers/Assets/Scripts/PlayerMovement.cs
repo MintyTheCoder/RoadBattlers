@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement: MonoBehaviour
 {
@@ -15,9 +16,9 @@ public class PlayerMovement: MonoBehaviour
 
     public GameObject bombLeft, bombRight;
     private Rigidbody2D playerRigidbody;
-    private SpriteRenderer renderer;
+    private SpriteRenderer spriteRenderer;
 
-    public Animator animator;
+    public Animator animator, lifeAnim;
 
     private Vector2 respawnPoint = new Vector2(0, 2);
     //private Vector2 moveDirection;
@@ -27,23 +28,26 @@ public class PlayerMovement: MonoBehaviour
     public LayerMask groundLayer;
     private bool isTouchingGround;
 
-    public GameObject projectileLeftPrefab;
-    public GameObject projectileRightPrefab;
+    public GameObject projectileLeftPrefab, projectileRightPrefab;
 
     public Vector2 horizontalInput;
     public bool isFacingRight;
     bool canAttack = true;
     bool specialAllowed = false;
 
-    private int lives = 3;
+    public int lives = 3;
 
     public int health = 100;
+    [SerializeField] Text healthDisplay;
     
     private void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
+        //lifeAnim = GetComponentInChildren<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         playerRigidbody = GetComponent<Rigidbody2D>();
         StartCoroutine(SpecialTimer());
+        healthDisplay.text = "Health: " + health;
+        lifeAnim.SetInteger("Lives", lives);
     }
 
     public IEnumerator SpecialTimer()
@@ -62,13 +66,13 @@ public class PlayerMovement: MonoBehaviour
         if (horizontalInput.x > 0)
         {
             isFacingRight = true;
-            renderer.flipX = false;
+            spriteRenderer.flipX = false;
         }
 
         else if (horizontalInput.x < 0)
         {
             isFacingRight = false;
-            renderer.flipX = true;
+            spriteRenderer.flipX = true;
         }
 
         else
@@ -170,8 +174,10 @@ public class PlayerMovement: MonoBehaviour
 
     private void Update()
     {
-        player1 = GameObject.FindGameObjectWithTag("playerOne");
-        player2 = GameObject.FindGameObjectWithTag("playerTwo");
+        lifeAnim.SetInteger("Lives", lives);
+        healthDisplay.text = "Health: " + health;
+        player1 = GameObject.FindGameObjectWithTag("PlayerOne");
+        player2 = GameObject.FindGameObjectWithTag("PlayerTwo");
         // isTouchingGround = Physics2D.OverlapCircle(groundCheck.transform.position, groundCheckRadius, groundLayer);
 
         // MovePlayer();
@@ -179,12 +185,13 @@ public class PlayerMovement: MonoBehaviour
         if (health <= 0)
         {
             lives = lives - 1;
-            
+            lifeAnim.SetInteger("Lives", lives);
             health = 100;
 
             if (lives >= 1)
             {
                 transform.position = respawnPoint;
+                
             }
         }
 
@@ -193,18 +200,28 @@ public class PlayerMovement: MonoBehaviour
         if (lives == 0)
         {
             animator.SetBool("Dead", true);
-            Destroy(gameObject);
-            Time.timeScale = 0f;
+            lifeAnim.SetInteger("Lives", 0);
 
-            if (gameObject.tag == "playerOne")
+            Debug.Log(lifeAnim.GetInteger("Lives"));
+
+            lives = lives - 1;
+
+            //gameObject.transform.position = new Vector2(0,0);
+            StartCoroutine(Delay());
+
+            if (gameObject.tag == "PlayerOne")
             {
-                player2.transform.position = new Vector2(0,0);
+                //player2.transform.position = new Vector2(0,0);
+                gameObject.transform.position = GameManager.gameManagerInstance.spawnPoints[0].transform.position;
             }
 
-            else if (gameObject.tag == "playerTwo")
+            else if (gameObject.tag == "PlayerTwo")
             {
-                player1.transform.position = new Vector2(0,0);
+                //player1.transform.position = new Vector2(0,0);
+                gameObject.transform.position = GameManager.gameManagerInstance.spawnPoints[1].transform.position;
             }
+            
+
         }
 
     }
@@ -221,25 +238,36 @@ public class PlayerMovement: MonoBehaviour
         {
             health = health - 5;
             Debug.Log(health);
+            healthDisplay.text = "Health: " + health;
         }
 
         else if (other.tag == "Punch")
         {
             health = health - 10;
             Debug.Log(health);
+            healthDisplay.text = "Health: " + health;
         }
 
         else if (other.tag == "Bomb")
         {
             health = health - 40;
             Debug.Log(health);
+            healthDisplay.text = "Health: " + health;
         }
 
         else if (other.tag == "DeathBox")
         {
-            lives = lives - 1;
+            health = 0;
             Debug.Log("life lost");
+            healthDisplay.text = "Health: " + health;
             transform.position = respawnPoint;
         }
+    }
+
+    public IEnumerator Delay() 
+    {
+        Debug.Log("Paused");
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 0;
     }
 }

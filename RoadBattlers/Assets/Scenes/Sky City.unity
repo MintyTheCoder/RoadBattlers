@@ -295,8 +295,6 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  player1: {fileID: 173999962281365823, guid: b9781f7b52f774c79a4e84bee9892165, type: 3}
-  player2: {fileID: 173999962281365823, guid: b9781f7b52f774c79a4e84bee9892165, type: 3}
 --- !u!114 &217820629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,7 +755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &618742678
 MonoBehaviour:
   m_ObjectHideFlags: 0

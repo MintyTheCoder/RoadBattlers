@@ -21,10 +21,7 @@ public class SelectScreenManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        Debug.Log(PlayerPrefs.GetInt("player1SkinNumber"));
-        Debug.Log(PlayerPrefs.GetInt("player2SkinNumber"));
-        
+    {   
         if (playerOneSelected && playerTwoSelected == true)
         {
             playerSelectScreen.SetActive(false);
@@ -83,6 +80,7 @@ public class SelectScreenManager : MonoBehaviour
         audioSource.PlayOneShot(buttonClick);
         //yield return new WaitForSeconds(0.5f);
         playerOneSelected = true;
+        Debug.Log("Avocado Selected");
         //  qyield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player1SkinNumber", 0);
         yield return new WaitForSeconds(1);
@@ -93,6 +91,7 @@ public class SelectScreenManager : MonoBehaviour
         audioSource.PlayOneShot(buttonClick);
         //yield return new WaitForSeconds(0.5f);
         playerOneSelected = true;
+        Debug.Log("DaQuan Selected");
         //yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player1SkinNumber", 1);
         yield return new WaitForSeconds(1);
@@ -103,6 +102,7 @@ public class SelectScreenManager : MonoBehaviour
         audioSource.PlayOneShot(buttonClick);
         //yield return new WaitForSeconds(0.5f);
         playerOneSelected = true;
+        Debug.Log("Robot Selected");
         //yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player1SkinNumber", 2);
         yield return new WaitForSeconds(1);
@@ -113,6 +113,7 @@ public class SelectScreenManager : MonoBehaviour
         audioSource.PlayOneShot(buttonClick);
         //yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
+        Debug.Log("Baseball Selected");
         //yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player2SkinNumber", 0);
         yield return new WaitForSeconds(1);
@@ -123,6 +124,7 @@ public class SelectScreenManager : MonoBehaviour
         audioSource.PlayOneShot(buttonClick);
         //yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
+        Debug.Log("Munch Selected");
         //yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player2SkinNumber", 1);
         yield return new WaitForSeconds(1);
@@ -132,6 +134,7 @@ public class SelectScreenManager : MonoBehaviour
         audioSource.PlayOneShot(buttonClick);
         //yield return new WaitForSeconds(0.5f);
         playerTwoSelected = true;
+        Debug.Log("Terrance Selected");
         //yield return new WaitForSeconds(0.5f);
         PlayerPrefs.SetInt("player2SkinNumber", 2);
         yield return new WaitForSeconds(1);
