@@ -162,34 +162,46 @@ public class PlayerMovement: MonoBehaviour
     {
         Debug.Log("Throw!");
 
+        animator.SetBool("isThrow", true);
+
         if (isFacingRight && canAttack == true)
         {
             Instantiate(projectileRightPrefab, shotOffSetRight.transform.position, Quaternion.identity);
+            StartCoroutine(DelayThrow());
             StartCoroutine(DelayPress());
         }
 
         else if (!isFacingRight && canAttack == true)
         {
             Instantiate(projectileLeftPrefab, shotOffSetLeft.transform.position, Quaternion.identity);
+            StartCoroutine(DelayThrow());
             StartCoroutine(DelayPress());
         }
 
         canAttack = false;
     }
 
+    public IEnumerator DelayThrow()
+    {
+        yield return new WaitForSeconds(1);
+        animator.SetBool("isThrow", false);
+    }
+
     public void OnPunch()
     {
         Debug.Log("Punch!");
-
+        animator.SetBool("isPunch", true);
         if (isFacingRight && canAttack == true)
         {
             Instantiate(punchRight, shotOffSetRight.transform.position, Quaternion.identity);
+            StartCoroutine(PunchDelay());
             StartCoroutine(DelayPress());
         }
 
         else if (!isFacingRight && canAttack == true)
         {
             Instantiate(punchLeft, shotOffSetLeft.transform.position, Quaternion.identity);
+            StartCoroutine(PunchDelay());
             StartCoroutine(DelayPress());
         }
 
@@ -197,21 +209,30 @@ public class PlayerMovement: MonoBehaviour
         
     }
 
+    public IEnumerator PunchDelay()
+    {
+        yield return new WaitForSeconds(1.2f);
+        animator.SetBool("isPunch", false);
+    }
+
     public void OnSpecial()
     {
         if (specialAllowed)
         {
+            animator.SetBool("isThrow", true);
             Debug.Log("Special!!");
 
             if (isFacingRight && canAttack == true)
             {
                 Instantiate(bombRight, shotOffSetRight.transform.position, Quaternion.identity);
+                StartCoroutine(DelayThrow());
                 StartCoroutine(DelayPress());
             }
 
             else if (!isFacingRight && canAttack == true)
             {
                 Instantiate(bombLeft, shotOffSetLeft.transform.position, Quaternion.identity);
+                StartCoroutine(DelayThrow());
                 StartCoroutine(DelayPress());
             }
 
