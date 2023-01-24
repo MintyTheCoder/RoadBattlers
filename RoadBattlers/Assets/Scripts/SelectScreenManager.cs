@@ -15,8 +15,8 @@ public class SelectScreenManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerSelectScreen.SetActive(true);
-        mapSelectScreen.SetActive(false);
+        //playerSelectScreen.SetActive(true);
+        //mapSelectScreen.SetActive(false);
     }
 
     // Update is called once per frame

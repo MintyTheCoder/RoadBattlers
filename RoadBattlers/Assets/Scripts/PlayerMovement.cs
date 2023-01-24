@@ -8,6 +8,9 @@ public class PlayerMovement: MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 5.0f;
     [SerializeField] private float jumpPower = 5.0f;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip punchNoise, throwNoise, damageNoise, deathNoise;
+
     public GameObject shotOffSetRight, shotOffSetLeft;
 
     public GameObject punchLeft, punchRight;
@@ -65,12 +68,11 @@ public class PlayerMovement: MonoBehaviour
         {
             lives = lives - 1;
             lifeAnim.SetInteger("Lives", lives);
-            health = 100;
 
             if (lives >= 1)
             {
                 transform.position = respawnPoint;
-
+                health = 100;
             }
         }
 
@@ -81,6 +83,7 @@ public class PlayerMovement: MonoBehaviour
             animator.SetBool("Dead", true);
             lifeAnim.SetInteger("Lives", 0);
 
+            audioSource.PlayOneShot(deathNoise);
             lives = lives - 1;
 
             StartCoroutine(Delay());
@@ -91,6 +94,7 @@ public class PlayerMovement: MonoBehaviour
                 player2.transform.localScale = new Vector3(0.36f, 0.36f);
                 gameObject.transform.position = GameManager.gameManagerInstance.spawnPoints[0].transform.position;
                 Instantiate(playerTwoWinUI, new Vector2(0, 0), Quaternion.identity);
+                Time.timeScale = 0;
             }
 
             else if (gameObject.tag == "PlayerTwo")
@@ -99,6 +103,7 @@ public class PlayerMovement: MonoBehaviour
                 player1.transform.localScale = new Vector3(0.36f, 0.36f);
                 gameObject.transform.position = GameManager.gameManagerInstance.spawnPoints[1].transform.position;
                 Instantiate(playerOneWinUI, new Vector2(0, 0), Quaternion.identity);
+                Time.timeScale = 0;
             }
 
 
@@ -161,23 +166,22 @@ public class PlayerMovement: MonoBehaviour
     public void OnThrow()
     {
         Debug.Log("Throw!");
-
         animator.SetBool("isThrow", true);
-
+        audioSource.PlayOneShot(throwNoise);
         if (isFacingRight && canAttack == true)
         {
             Instantiate(projectileRightPrefab, shotOffSetRight.transform.position, Quaternion.identity);
-            StartCoroutine(DelayThrow());
+            
             StartCoroutine(DelayPress());
         }
 
         else if (!isFacingRight && canAttack == true)
         {
             Instantiate(projectileLeftPrefab, shotOffSetLeft.transform.position, Quaternion.identity);
-            StartCoroutine(DelayThrow());
+            
             StartCoroutine(DelayPress());
         }
-
+        StartCoroutine(DelayThrow());
         canAttack = false;
     }
 
@@ -190,21 +194,23 @@ public class PlayerMovement: MonoBehaviour
     public void OnPunch()
     {
         Debug.Log("Punch!");
+        audioSource.PlayOneShot(punchNoise);
         animator.SetBool("isPunch", true);
+        
         if (isFacingRight && canAttack == true)
         {
             Instantiate(punchRight, shotOffSetRight.transform.position, Quaternion.identity);
-            StartCoroutine(PunchDelay());
+            
             StartCoroutine(DelayPress());
         }
 
         else if (!isFacingRight && canAttack == true)
         {
             Instantiate(punchLeft, shotOffSetLeft.transform.position, Quaternion.identity);
-            StartCoroutine(PunchDelay());
+            
             StartCoroutine(DelayPress());
         }
-
+        StartCoroutine(PunchDelay());
         canAttack = false;
         
     }
@@ -219,6 +225,7 @@ public class PlayerMovement: MonoBehaviour
     {
         if (specialAllowed)
         {
+            audioSource.PlayOneShot(throwNoise);
             animator.SetBool("isThrow", true);
             Debug.Log("Special!!");
 
@@ -244,7 +251,7 @@ public class PlayerMovement: MonoBehaviour
     public IEnumerator DelayPress()
     {
         //canShoot should be true 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.5F);
         canAttack = true;
     }
 
@@ -260,6 +267,7 @@ public class PlayerMovement: MonoBehaviour
     {
         if (other.tag == "Projectile")
         {
+            audioSource.PlayOneShot(damageNoise);
             health = health - 5;
             Debug.Log(health);
             healthDisplay.text = "Health: " + health;
@@ -267,6 +275,7 @@ public class PlayerMovement: MonoBehaviour
 
         else if (other.tag == "Punch")
         {
+            audioSource.PlayOneShot(damageNoise);
             health = health - 10;
             Debug.Log(health);
             healthDisplay.text = "Health: " + health;
@@ -274,6 +283,7 @@ public class PlayerMovement: MonoBehaviour
 
         else if (other.tag == "Bomb")
         {
+            audioSource.PlayOneShot(damageNoise);
             health = health - 40;
             Debug.Log(health);
             healthDisplay.text = "Health: " + health;
@@ -281,6 +291,7 @@ public class PlayerMovement: MonoBehaviour
 
         else if (other.tag == "DeathBox")
         {
+            audioSource.PlayOneShot(deathNoise);
             health = 0;
             Debug.Log("life lost");
             healthDisplay.text = "Health: " + health;
