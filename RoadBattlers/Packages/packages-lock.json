@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "com.unity.2d.animation": {
-      "version": "7.0.8",
+      "version": "7.0.9",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.common": "6.0.5",
+        "com.unity.2d.common": "6.0.6",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.modules.animation": "1.0.0",
         "com.unity.modules.uielements": "1.0.0"
@@ -13,7 +13,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.common": {
-      "version": "6.0.5",
+      "version": "6.0.6",
       "depth": 2,
       "source": "registry",
       "dependencies": {
@@ -32,7 +32,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.pixel-perfect": {
-      "version": "5.0.1",
+      "version": "5.0.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -115,8 +115,8 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.2d.animation": "7.0.8",
-        "com.unity.2d.pixel-perfect": "5.0.1",
+        "com.unity.2d.animation": "7.0.9",
+        "com.unity.2d.pixel-perfect": "5.0.3",
         "com.unity.2d.psdimporter": "6.0.6",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.2d.spriteshape": "7.0.6",
@@ -125,7 +125,7 @@
       }
     },
     "com.unity.ide.rider": {
-      "version": "3.0.17",
+      "version": "3.0.21",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -183,6 +183,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.settings-manager": {
+      "version": "1.0.3",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.test-framework": {
       "version": "1.1.33",
       "depth": 0,
@@ -204,7 +211,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.6.4",
+      "version": "1.6.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -233,6 +240,14 @@
         "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.xsduan.hierarchy-folders": {
+      "version": "file:../../unity-hierarchy-folders",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.settings-manager": "1.0.1"
+      }
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
