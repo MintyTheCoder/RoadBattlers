@@ -1,0 +1,2 @@
+# Third-party Unity packages: keep them out of GitHub language stats
+"RoadBattlers/Assets/TextMesh Pro/**" linguist-vendored
