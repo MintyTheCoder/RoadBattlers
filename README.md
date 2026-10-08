@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="RoadBattlers/Assets/Art/Road%20Battlers%20Logo.png" alt="Road Battlers logo" width="320">
+<img src=".github/banner.png" alt="Road Battlers" width="100%">
 
 # Road Battlers
 
